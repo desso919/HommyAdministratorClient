@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5595FA59-BBEB-41C8-A951-310C8EDCFF39}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Personal.Health.Care.DesktopApp</RootNamespace>
+    <AssemblyName>Personal.Health.Care.DesktopApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirstFloor.ModernUI">
+      <HintPath>..\packages\ModernUI.WPF.1.0.9\lib\net45\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentDateTime">
+      <HintPath>..\packages\FluentDateTime.1.13.0\Lib\NET35\FluentDateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Blend.Interactivity.Wpf.1.0.1340.0\lib\net\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.8\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.8\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.8\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.8\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.8\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.8\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MediatorClass.cs" />
+    <Compile Include="Pages\NavigationPages\RecommendedVisitationsTab.xaml.cs">
+      <DependentUpon>RecommendedVisitationsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NavigationPages\TemplatesTab.xaml.cs">
+      <DependentUpon>TemplatesTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Options\HistoryOptions\AddHistoryPage.xaml.cs">
+      <DependentUpon>AddHistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NavigationPages\HistoryTab.xaml.cs">
+      <DependentUpon>HistoryTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NavigationPages\VisitationTab.xaml.cs">
+      <DependentUpon>VisitationTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Options\TemplateOptions\AddTemplateOption.xaml.cs">
+      <DependentUpon>AddTemplateOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Options\TemplateOptions\ViewTemplatesPage.xaml.cs">
+      <DependentUpon>ViewTemplatesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Options\VisitationOptions\AddVisitationOption.xaml.cs">
+      <DependentUpon>AddVisitationOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\HelpView.xaml.cs">
+      <DependentUpon>HelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\PatientProfileView.xaml.cs">
+      <DependentUpon>PatientProfileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\AskDiagnoseView.xaml.cs">
+      <DependentUpon>AskDiagnoseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\EditVisitationView.xaml.cs">
+      <DependentUpon>EditVisitationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\ExitConfirmView.xaml.cs">
+      <DependentUpon>ExitConfirmView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\HistoryView.xaml.cs">
+      <DependentUpon>HistoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\MessageWindow.xaml.cs">
+      <DependentUpon>MessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\ModernDialog1.xaml.cs">
+      <DependentUpon>ModernDialog1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\MoveToVisitationView.xaml.cs">
+      <DependentUpon>MoveToVisitationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\RecommendedVisitationsView.xaml.cs">
+      <DependentUpon>RecommendedVisitationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\ScheduledVisitationView.xaml.cs">
+      <DependentUpon>ScheduledVisitationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\SelectTemplateView.xaml.cs">
+      <DependentUpon>SelectTemplateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\TemplateEdit.xaml.cs">
+      <DependentUpon>TemplateEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\ViewHistory.xaml.cs">
+      <DependentUpon>ViewHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utills\Messenger.cs" />
+    <Compile Include="Utills\PasswordBoxBindingBehavior.cs" />
+    <Compile Include="Utills\RelayCommand.cs" />
+    <Compile Include="Utills\SecurityUtil.cs" />
+    <Compile Include="Utills\Utill.cs" />
+    <Compile Include="ViewModels\AddHistoryViewModel.cs" />
+    <Compile Include="ViewModels\AddTemplateViewModel.cs" />
+    <Compile Include="ViewModels\AddVisitationViewModel.cs" />
+    <Compile Include="ViewModels\AskDiagnoseViewModel.cs" />
+    <Compile Include="ViewModels\EditTemplateViewModel.cs" />
+    <Compile Include="ViewModels\EditVisitationViewModel.cs" />
+    <Compile Include="ViewModels\HistoryViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\LoggedInPatient.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\MoveToVisitationViewModel.cs" />
+    <Compile Include="ViewModels\ProfileViewModel.cs" />
+    <Compile Include="ViewModels\RecommendedVisitationsViewModel.cs" />
+    <Compile Include="ViewModels\RegistrationViewModel.cs" />
+    <Compile Include="ViewModels\SheduledVisitationsViewModel.cs" />
+    <Compile Include="ViewModels\TemplatesViewModel.cs" />
+    <Compile Include="ViewModels\ViewHistoryViewModel.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\NavigationPages\RecommendedVisitationsTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NavigationPages\TemplatesTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Options\HistoryOptions\AddHistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NavigationPages\HistoryTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NavigationPages\VisitationTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Options\HistoryOptions\MyHistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Options\TemplateOptions\AddTemplateOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Options\TemplateOptions\ViewTemplatesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Options\VisitationOptions\AddVisitationOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Options\VisitationOptions\ScheduledVisitationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Settings\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Pages\Options\HistoryOptions\MyHistoryPage.xaml.cs">
+      <DependentUpon>MyHistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Options\VisitationOptions\ScheduledVisitationsPage.xaml.cs">
+      <DependentUpon>ScheduledVisitationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Pages\Settings\Appearance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Pages\Settings\Appearance.xaml.cs">
+      <DependentUpon>Appearance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\AppearanceViewModel.cs" />
+    <Page Include="Pages\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Pages\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserManagement\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserManagement\RegistrationView.xaml.cs">
+      <DependentUpon>RegistrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="Pages\Settings\HelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Settings\PatientProfileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UserManagement\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UserManagement\RegistrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\AskDiagnoseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\EditVisitationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\ExitConfirmView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\HistoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\MessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\ModernDialog1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\MoveToVisitationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\RecommendedVisitationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\ScheduledVisitationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\SelectTemplateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\TemplateEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Views\ViewHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Icons\doctor.png" />
+    <Resource Include="Images\Icons\history.png" />
+    <Resource Include="Images\Icons\history2.png" />
+    <Resource Include="Images\Icons\help.png" />
+    <Content Include="Images\Icons\hospital.png" />
+    <Resource Include="Images\Icons\scheduled.png" />
+    <Resource Include="Images\Icons\template.png" />
+    <Resource Include="Images\Icons\profile.png" />
+    <Resource Include="Images\Icons\templateIcon.jpg" />
+    <Resource Include="Images\Icons\rec.png" />
+    <Content Include="Images\Icons\templates.png" />
+    <Resource Include="Images\Pictures\login.jpg" />
+    <Resource Include="Images\Pictures\registration.jpg" />
+    <Content Include="Images\Pictures\start.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NInjectConfigProject\NInjectConfigProject.csproj">
+      <Project>{964ca4c5-cabf-4bdd-afa9-cd15d7cca645}</Project>
+      <Name>NInjectConfigProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Personal.Health.Models\Personal.Health.Models.csproj">
+      <Project>{0f3e8b42-b189-41d5-b59e-259fce16746e}</Project>
+      <Name>Personal.Health.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Personal.Health.Services\Personal.Health.Services.csproj">
+      <Project>{2af5f2d4-1a27-4be9-a724-43073f7750cd}</Project>
+      <Name>Personal.Health.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
