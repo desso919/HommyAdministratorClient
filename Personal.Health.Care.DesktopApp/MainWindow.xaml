@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mui="http://firstfloorsoftware.com/ModernUI"
         xmlns:local="clr-namespace:Personal.Health.Care.DesktopApp.ViewModels"
-        Title="Personal Health Application" IsTitleVisible="True"
+        Title="Hommy" IsTitleVisible="True"
         MinHeight="600"
         MinWidth="800"
         ContentSource="/Pages/Home.xaml">
@@ -13,13 +13,12 @@
     </Window.DataContext>
 
     <mui:ModernWindow.MenuLinkGroups>
-        <mui:LinkGroup DisplayName="Personal Health Record">
+        <mui:LinkGroup DisplayName="Hommy configuration">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Home" Source="/Pages/Home.xaml" />
-                <mui:Link DisplayName="Medical history"  Source="/Pages/NavigationPages/HistoryTab.xaml" />
-                <mui:Link DisplayName="Scheduled visitations" Source="/Pages/NavigationPages/VisitationTab.xaml"/>
-                <mui:Link DisplayName="Recommended visitations" Source="/Pages/NavigationPages/RecommendedVisitationsTab.xaml"/>
-                <mui:Link DisplayName="Templates" Source="/Pages/NavigationPages/TemplatesTab.xaml"/>
+                <mui:Link DisplayName="My Connected Devices"  Source="/Pages/NavigationPages/HistoryTab.xaml" />
+                <mui:Link DisplayName="Events" Source="/Pages/NavigationPages/VisitationTab.xaml"/>
+                <mui:Link DisplayName="My Rules" Source="/Pages/NavigationPages/RecommendedVisitationsTab.xaml"/>                
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="settings" GroupKey="settings">

@@ -67,27 +67,27 @@ namespace Personal.Health.Care.DesktopApp.Model
 
         public static void Init()
         {
-            long thisPatientId = LoggedInPatient.GetPatient().Id;
+            long thisPatientId = LoggedInUser.GetLoggedInUser().Id;
 
             hospitals = NinjectConfig.Container.Get<IHospitalService>().GetAllHispitals();
             doctors = NinjectConfig.Container.Get<IDoctorService>().GetAllDoctors();
-            recommendedVisitation = NinjectConfig.Container.Get<IRecommendedVisitationService>().GetRecommendedVisitationForPatient(Utills.Utill.GetAge(LoggedInPatient.GetPatient().BirhtDate));
+            recommendedVisitation = NinjectConfig.Container.Get<IRecommendedVisitationService>().GetRecommendedVisitationForPatient(Utills.Utill.GetAge(LoggedInUser.GetLoggedInUser().BirhtDate));
         }
 
         public static void UpdatePatientTemplates()
         {
-            templates = NinjectConfig.Container.Get<ITemplateService>().GetAllPatientTemplates(LoggedInPatient.GetPatient().Id);
+            templates = NinjectConfig.Container.Get<ITemplateService>().GetAllPatientTemplates(LoggedInUser.GetLoggedInUser().Id);
         }
 
         public static void UpdatePatientVisitations()
         {
-            visitations = NinjectConfig.Container.Get<IVisitationService>().GetAllScheduledVisitationsForThisPatient(LoggedInPatient.GetPatient().Id);
+            visitations = NinjectConfig.Container.Get<IVisitationService>().GetAllScheduledVisitationsForThisPatient(LoggedInUser.GetLoggedInUser().Id);
             sortVisitations();
         }
 
         public static void UpdatePatientHistory()
         {
-            history = NinjectConfig.Container.Get<IHistoryService>().GetAllHistoryForThisPatient(LoggedInPatient.GetPatient().Id);
+            history = NinjectConfig.Container.Get<IHistoryService>().GetAllHistoryForThisPatient(LoggedInUser.GetLoggedInUser().Id);
             sortHistory();
         }
 

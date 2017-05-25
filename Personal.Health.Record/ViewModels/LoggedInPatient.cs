@@ -10,9 +10,9 @@ namespace Personal.Health.Record.ViewModels
     public sealed class LoggedInPatient
     {
         private static readonly object syncLock = new object();
-        private static Patient loggedInPatient;
+        private static User loggedInPatient;
 
-        public static void Init(Patient patient)
+        public static void Init(User patient)
         {
             if (patient != null)
             {
@@ -20,7 +20,7 @@ namespace Personal.Health.Record.ViewModels
             }
         }
 
-        public static Patient GetPatient()
+        public static User GetPatient()
         {
             lock (syncLock)
             {

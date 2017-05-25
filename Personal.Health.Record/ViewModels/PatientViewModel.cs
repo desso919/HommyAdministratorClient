@@ -16,7 +16,7 @@ namespace Personal.Health.Record.ViewModels
 {
     public class PatientViewModel : INotifyPropertyChanged
     {
-        private Patient logedInPatient;
+        private User logedInPatient;
         private IPatientService service;
 
         public PatientViewModel()
@@ -26,7 +26,7 @@ namespace Personal.Health.Record.ViewModels
         }
 
         #region View Properties
-        public Patient LogedInPatient { get { return logedInPatient; } set { logedInPatient = value; OnPropertyChanged("LogedInPatient"); } }
+        public User LogedInPatient { get { return logedInPatient; } set { logedInPatient = value; OnPropertyChanged("LogedInPatient"); } }
 
         #endregion
         #region INotifyPropertyChanged Members

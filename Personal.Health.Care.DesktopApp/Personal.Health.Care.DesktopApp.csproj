@@ -171,7 +171,7 @@
     <Compile Include="ViewModels\EditVisitationViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
-    <Compile Include="ViewModels\LoggedInPatient.cs" />
+    <Compile Include="ViewModels\LoggedInUser.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\MoveToVisitationViewModel.cs" />
@@ -346,6 +346,8 @@
     <Resource Include="Images\Icons\history.png" />
     <Resource Include="Images\Icons\history2.png" />
     <Resource Include="Images\Icons\help.png" />
+    <Content Include="Images\Icons\devices2.png" />
+    <Content Include="Images\Icons\devices.png" />
     <Content Include="Images\Icons\hospital.png" />
     <Resource Include="Images\Icons\scheduled.png" />
     <Resource Include="Images\Icons\template.png" />

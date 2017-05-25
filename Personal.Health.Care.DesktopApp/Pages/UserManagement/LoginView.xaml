@@ -10,7 +10,7 @@
                   MinHeight="380"
                   MinWidth="420"
                   mc:Ignorable="d"
-                  Title="Personal Health Application" 
+                  Title="Hommy" 
                   ResizeMode="NoResize"
                   Style="{StaticResource BlankWindow}" Height="350" Width="450">
 
@@ -21,12 +21,12 @@
 
     <Window.InputBindings>
         <KeyBinding Key="Enter" Command="{ Binding LoginCommand}" />
-    </Window.InputBindings>       
-    
+    </Window.InputBindings>
+
     <Window.Background>
         <ImageBrush ImageSource="../../Images/Pictures/login.jpg"/>
     </Window.Background>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"/>
@@ -42,28 +42,28 @@
         </Grid.ColumnDefinitions>
 
         <!-- Application Name -->
-        <Label Grid.Row="0" Grid.ColumnSpan="3" Content="Personal Health Application" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+        <Label Grid.Row="0" Grid.ColumnSpan="3" Content="Hommy Addministrator " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
                Width="482" FontStyle="Italic" FontSize="18" FontStretch="Condensed" FontWeight="Bold" Height="38"/>
         <!-- Application details -->
-        <Label Grid.Row="0" Grid.ColumnSpan="3" Content="Your personal health record application. Log on to continue..." FontStyle="Oblique" 
-               HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="482"/>
+        <Label Grid.Row="0" Grid.ColumnSpan="3" Content="Hommy Administrator gives you an options for configuring your own rules and&#xD;&#xA;schedules for your devices. Please login to continue..." FontStyle="Oblique" 
+               HorizontalAlignment="Left" Margin="10,43,-48,0" VerticalAlignment="Top" Width="482" Height="35"/>
 
         <!-- Log on form -->
-        <Label Grid.Row="1" Grid.Column="1" Content="Username/UIN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="Username" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
         <Label Grid.Row="2" Grid.Column="1"  Content="Password" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="150"/>
-        
-        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=LoginCredential}" Height="25" TextWrapping="Wrap"  VerticalAlignment="Center" Width="250"/>
-        
+
+        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=Username}" Height="25" TextWrapping="Wrap"  VerticalAlignment="Center" Width="250"/>
+
         <PasswordBox Grid.Row="2" Grid.Column="1" Name="password" HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="250">
             <i:Interaction.Behaviors>
                 <utilities:PasswordBoxBindingBehavior Password="{Binding Password}" />
             </i:Interaction.Behaviors>
         </PasswordBox>
-        
+
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
             <Button Content="Log In" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Command="{Binding LoginCommand}" />
             <Button Content="Register" Margin="75,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Click="Button_Click"/>
         </StackPanel>
-       
+
     </Grid>
 </mui:ModernWindow>

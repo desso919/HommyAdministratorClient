@@ -23,7 +23,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         private IPatientService service;
         private ICommand loginCommand;
-        private string loginCredential;
+        private string username;
         private SecureString password;
 
         #region Constructor
@@ -45,10 +45,10 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             set { loginCommand = value; }
         }
 
-        public string LoginCredential
+        public string Username
         {
-            get { return loginCredential; }
-            set { loginCredential = value; NotifyPropertyChanged(); }
+            get { return username; }
+            set { username = value; NotifyPropertyChanged(); }
         }
 
         public SecureString Password
@@ -79,58 +79,47 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         #endregion
 
-        #region Login Patient code
+        #region Login User code
 
         public void LoginPatient(object obj)
         {
-            Patient patient = null;
+            User patient = null;
 
-            if (LoginCredential.Equals("deso"))
+            if (Username == null || Password == null)
             {
-                var loginWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                loginWindow.Close(); 
-
-            }
-
-            if (LoginCredential == null || Password == null)
-            {
-                Messenger.ShowMessage(" Please enter username and password first!");
+                Messenger.ShowMessage(" Please enter username and password first! ");
                 return;
             }
-
-            if (SecurityUtil.isEGN(LoginCredential))
-            {
-                patient = service.LoginWithEGN(LoginCredential, SecurityUtil.HashPassword(Password));
-            }
             else
             {
-                patient = service.LoginWithUsername(LoginCredential, SecurityUtil.HashPassword(Password));
-            }
-
-            if (patient != null)
-            {
-
-                var loginWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-                if (loginWindow != null)
+                if (true)
                 {
-                    LoggedInPatient.Init(patient);
-                    MediatorClass.Init();
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    loginWindow.Close();                                
+                    User user = new User();
+                    user.Username = Username;
+                    user.FirstName = Username;
+                    user.LastName = "Hristov";
+                    user.Password = SecurityUtil.HashPassword(Password);
+
+                    var loginWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+                    if (loginWindow != null)
+                    {
+                        LoggedInUser.Init(user);
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        loginWindow.Close();
+                    }
+                    else
+                    {
+                        Messenger.ShowMessage(" Something went wrong! ");
+
+                    }    
                 }
-                else 
+                else
                 {
-                    Messenger.ShowMessage(" Something went wrong! ");
-
-                }                       
+                    Messenger.ShowMessage(" Wrong Username or password. Please try again! ");
+                }
             }
-            else
-            {
-                Messenger.ShowMessage(" Wrong Username or password. Please try again!");
-            }
+                //patient = service.LoginWithUsername(Username, SecurityUtil.HashPassword(Password));
         }
 
         #endregion

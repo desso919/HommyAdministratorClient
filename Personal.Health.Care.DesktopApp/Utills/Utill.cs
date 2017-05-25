@@ -201,7 +201,7 @@ namespace Personal.Health.Care.DesktopApp.Utills
             return true;
         }
 
-        public static bool isValidPatient(Patient patient)
+        public static bool isValidPatient(User patient)
         {
 
             if (!SecurityUtil.isValidString(patient.Username))

@@ -11,7 +11,7 @@ namespace Personal.Health.Models
     {
         public long Id { get; set; }
 
-        public Patient Patient { get; set; }
+        public User Patient { get; set; }
 
         public string Title { get; set; }
 

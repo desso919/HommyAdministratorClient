@@ -80,7 +80,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
             if (Utills.Utill.isValidHistory(History))
             {
-                History.Patient = LoggedInPatient.GetPatient();
+                History.Patient = LoggedInUser.GetLoggedInUser();
                 Boolean isAdded = service.addHistory(History);
                 string message;
 

@@ -25,11 +25,11 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         private ICommand addPatientCommand;
         private IPatientService service;
         private SecureString password;
-        private Patient patient;
+        private User patient;
         
         public RegistrationViewModel()
         {
-            patient = new Patient();          
+            patient = new User();          
             service = NinjectConfig.Container.Get<IPatientService>();
             addPatientCommand = new RelayCommand(RegisterPatient);
             registrationFormModel = RegistrationFormModel.GetInstance();
@@ -37,7 +37,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         #region Properties
 
-        public Patient Patient
+        public User Patient
         {
             get { return patient; }
             set { patient = value; NotifyPropertyChanged(); }
@@ -84,7 +84,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         #endregion
 
-        #region Register Patient Code
+        #region Register User Code
 
         public void RegisterPatient(object obj)
         {
@@ -103,7 +103,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
                         var loginWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
                         if (loginWindow != null)
                         {
-                            LoggedInPatient.Init(Patient);
+                            LoggedInUser.Init(Patient);
                             MediatorClass.Init();
                             MainWindow mainWindow = new MainWindow();
                             mainWindow.Show();

@@ -33,7 +33,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             set { logoutCommand = value; }
         }
 
-        public Patient Patient { get { return LoggedInPatient.GetPatient(); } }
+        public User Patient { get { return LoggedInUser.GetLoggedInUser(); } }
 
         #endregion
 
@@ -60,7 +60,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             var mainWindows = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
             if (mainWindows != null)
             {
-                LoggedInPatient.LogoutPatient();
+                LoggedInUser.LogoutUser();
                 MediatorClass.Hospitals = null;
                 MediatorClass.Doctors = null;
                 MediatorClass.Histories = null;

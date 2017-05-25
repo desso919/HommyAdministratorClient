@@ -7,23 +7,23 @@ namespace Personal.Health.Services.Impl
 {
     public class PatientService : IPatientService
     {
-        public Patient GetPatient(long id)
+        public User GetPatient(long id)
         {
 
             string result = WebService.getInstance().GetPatient(id);
             if (result.Equals(ServicesUtils.EMPTY_JSON)) { return null; }
 
-            return JsonConvert.DeserializeObject<Patient>(result);
+            return JsonConvert.DeserializeObject<User>(result);
         }
 
-        public Patient LoginWithUsername(string username, string password)
+        public User LoginWithUsername(string username, string password)
         {
             try
             {
                 string result = WebService.getInstance().GetPatientByUsernameAndPassword(username, password);
                 if (result.Equals(ServicesUtils.EMPTY_JSON)) { return null; }
 
-                return JsonConvert.DeserializeObject<Patient>(result);
+                return JsonConvert.DeserializeObject<User>(result);
             }
             catch (Exception)
             {
@@ -32,14 +32,14 @@ namespace Personal.Health.Services.Impl
             }          
         }
 
-        public Patient LoginWithEGN(string egn, string password)
+        public User LoginWithEGN(string egn, string password)
         {
             try
             {
                 string result = WebService.getInstance().GetPatientByEGNAndPassword(egn, password);
                 if (result.Equals(ServicesUtils.EMPTY_JSON)) { return null; }
 
-                return JsonConvert.DeserializeObject<Patient>(result);
+                return JsonConvert.DeserializeObject<User>(result);
             }
             catch (Exception)
             {
@@ -47,7 +47,7 @@ namespace Personal.Health.Services.Impl
             }   
         }
 
-        public Boolean RegisterUser(Patient patient)
+        public Boolean RegisterUser(User patient)
         {
             if (patient.BirhtDate.Equals(String.Empty))
             {

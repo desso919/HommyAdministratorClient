@@ -116,7 +116,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         {
             if (Utills.Utill.isValidTemplate(Template))
             {
-                Template.Patient = LoggedInPatient.GetPatient();
+                Template.Patient = LoggedInUser.GetLoggedInUser();
                 Template.HospitalId = Template.Hospital.HospitalId;
                 Template.DoctorId = Template.Doctor.DoctorId;
                 Boolean isAdded = service.AddTemplate(Template);

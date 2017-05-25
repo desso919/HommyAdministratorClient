@@ -7,32 +7,32 @@ using System.Threading.Tasks;
 
 namespace Personal.Health.Care.DesktopApp.ViewModels
 {
-    public sealed class LoggedInPatient
+    public sealed class LoggedInUser
     {
         private static readonly object syncLock = new object();
-        private static Patient loggedInPatient;
+        private static User loggedInUser;
 
-        public static void Init(Patient patient)
+        public static void Init(User user)
         {
-            if (patient != null)
+            if (user != null)
             {
-                loggedInPatient = patient;
+                loggedInUser = user;
             }
         }
 
-        public static Patient GetPatient()
+        public static User GetLoggedInUser()
         {
             lock (syncLock)
             {
-                return loggedInPatient;
+                return loggedInUser;
             }
         }  
 
-        public static void LogoutPatient()
+        public static void LogoutUser()
         {
             lock (syncLock)
             {
-                loggedInPatient = null;
+                loggedInUser = null;
             }
 
         }

@@ -19,7 +19,7 @@ namespace Hospital.Models
 
         public long DoctorId { get; set; }
 
-        public Patient Patient { get; set; }
+        public User Patient { get; set; }
 
         public HospitalModel Hospital { get; set; }
 

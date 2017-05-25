@@ -80,7 +80,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             {
                 if (NewVisitation != null)
                 {
-                    NewVisitation.Patient = LoggedInPatient.GetPatient();
+                    NewVisitation.Patient = LoggedInUser.GetLoggedInUser();
                     isAdded = NinjectConfig.Container.Get<IVisitationService>().AddNewScheduleVisitation(newVisitation);
                 }
 

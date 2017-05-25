@@ -80,11 +80,11 @@ namespace Personal.Health.Record.ViewModels
 
         #endregion
 
-        #region Login Patient code
+        #region Login User code
 
         public void LoginPatient(object obj)
         {
-            Patient patient = null;
+            User patient = null;
 
             if (LoginCredential == null || Password == null)
             {

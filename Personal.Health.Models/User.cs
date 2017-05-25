@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace Hospital.Models
 {
-    public class Patient
+    public class User
     {
         private const string MALE = "Male";
         private const string FEMALE = "Female";
         private DateTime date;
         private bool isMale;
 
-
-        public Patient()
+        public User()
         {
             isMale = true;           
         }

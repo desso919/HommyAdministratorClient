@@ -97,7 +97,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         {
             if (Utills.Utill.isValidVisitation(Visitation))
             {
-                Visitation.Patient = LoggedInPatient.GetPatient();
+                Visitation.Patient = LoggedInUser.GetLoggedInUser();
                 Boolean isAdded = service.AddNewScheduleVisitation(Visitation);
                 string message;
 

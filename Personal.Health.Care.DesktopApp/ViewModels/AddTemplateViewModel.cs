@@ -77,7 +77,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         {
             if (Utills.Utill.isValidTemplate(Template))
             {
-                Template.Patient = LoggedInPatient.GetPatient();
+                Template.Patient = LoggedInUser.GetLoggedInUser();
                 Boolean isAdded = NinjectConfig.Container.Get<ITemplateService>().AddTemplate(Template);
                 string message = String.Empty;
 

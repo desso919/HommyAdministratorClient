@@ -84,7 +84,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         {
             if (Utills.Utill.isValidTemplate(Template))
             {
-                Template.Patient = LoggedInPatient.GetPatient();
+                Template.Patient = LoggedInUser.GetLoggedInUser();
                 bool isSuccessfullyEdited = service.EditTemplate(Template);
                 string message;
 

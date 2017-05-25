@@ -9,6 +9,6 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 {
     public class MainPageViewModel
     {
-        public Patient Patient { get { return LoggedInPatient.GetPatient(); } }
+        public User User { get { return LoggedInUser.GetLoggedInUser(); } }
     }
 }
