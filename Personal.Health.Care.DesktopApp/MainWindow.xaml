@@ -18,7 +18,7 @@
                 <mui:Link DisplayName="Home" Source="/Pages/Home.xaml" />
                 <mui:Link DisplayName="My Connected Devices"  Source="/Pages/NavigationPages/MyConnectedDevicesTab.xaml" />
                 <mui:Link DisplayName="Events" Source="/Pages/NavigationPages/VisitationTab.xaml"/>
-                <mui:Link DisplayName="My Rules" Source="/Pages/NavigationPages/RecommendedVisitationsTab.xaml"/>                
+                <mui:Link DisplayName="My Rules" Source="/Pages/NavigationPages/RulesTab.xaml"/>                
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="settings" GroupKey="settings">

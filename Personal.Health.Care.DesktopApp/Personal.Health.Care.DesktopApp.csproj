@@ -96,8 +96,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\MediatorClass.cs" />
-    <Compile Include="Pages\NavigationPages\RecommendedVisitationsTab.xaml.cs">
-      <DependentUpon>RecommendedVisitationsTab.xaml</DependentUpon>
+    <Compile Include="Pages\NavigationPages\RulesTab.xaml.cs">
+      <DependentUpon>RulesTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\NavigationPages\TemplatesTab.xaml.cs">
       <DependentUpon>TemplatesTab.xaml</DependentUpon>
@@ -147,8 +147,8 @@
     <Compile Include="Pages\Views\MoveToVisitationView.xaml.cs">
       <DependentUpon>MoveToVisitationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Views\RecommendedVisitationsView.xaml.cs">
-      <DependentUpon>RecommendedVisitationsView.xaml</DependentUpon>
+    <Compile Include="Pages\Views\RulesView.xaml.cs">
+      <DependentUpon>RulesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Views\ScheduledVisitationView.xaml.cs">
       <DependentUpon>ScheduledVisitationView.xaml</DependentUpon>
@@ -180,7 +180,7 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\MoveToVisitationViewModel.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
-    <Compile Include="ViewModels\RecommendedVisitationsViewModel.cs" />
+    <Compile Include="ViewModels\RulesViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\SheduledVisitationsViewModel.cs" />
     <Compile Include="ViewModels\TemplatesViewModel.cs" />
@@ -193,7 +193,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\NavigationPages\RecommendedVisitationsTab.xaml">
+    <Page Include="Pages\NavigationPages\RulesTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -319,7 +319,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Views\RecommendedVisitationsView.xaml">
+    <Page Include="Pages\Views\RulesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

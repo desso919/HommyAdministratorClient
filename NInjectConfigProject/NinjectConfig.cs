@@ -24,7 +24,7 @@ namespace NInjectConfigProject
             Container.Bind<IDeviceService>().To<DeviceService>().InTransientScope();
             Container.Bind<IVisitationService>().To<VisitationService>().InTransientScope();
             Container.Bind<ITemplateService>().To<TemplateServcie>().InTransientScope();
-            Container.Bind<IRecommendedVisitationService>().To<RecommendedVisitationService>().InTransientScope();
+            Container.Bind<IRulesService>().To<RulesService>().InTransientScope();
         }
     }
 }

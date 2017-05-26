@@ -49,7 +49,7 @@
     <Compile Include="ServiceInterfaces\IDeviceService.cs" />
     <Compile Include="ServiceInterfaces\IHospitalService.cs" />
     <Compile Include="ServiceInterfaces\IUserService.cs" />
-    <Compile Include="ServiceInterfaces\IRecommendedVisitationService.cs" />
+    <Compile Include="ServiceInterfaces\IRulesService.cs" />
     <Compile Include="ServiceInterfaces\ITemplateService.cs" />
     <Compile Include="ServiceInterfaces\IVisitationService.cs" />
   </ItemGroup>

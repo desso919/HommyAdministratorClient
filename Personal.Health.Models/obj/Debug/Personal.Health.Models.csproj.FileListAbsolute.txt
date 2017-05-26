@@ -7,3 +7,4 @@ C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdminis
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Models\bin\Debug\Personal.Health.Models.pdb
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Models\obj\Debug\Personal.Health.Models.dll
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Models\obj\Debug\Personal.Health.Models.pdb
+C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Models\obj\Debug\Personal.Health.Models.csprojResolveAssemblyReference.cache

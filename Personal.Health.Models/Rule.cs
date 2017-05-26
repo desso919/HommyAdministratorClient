@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Personal.Health.Models
 {
-    class Rule
+    public class Rule
     {
         public Rule() { }
 

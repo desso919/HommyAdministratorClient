@@ -9,7 +9,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     
     <UserControl.DataContext>
-        <local:RecommendedVisitationsViewModel/>
+        <local:RulesViewModel/>
     </UserControl.DataContext>
     
     <Grid Style="{StaticResource ContentRoot}">
@@ -22,7 +22,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <ListView Grid.Row="0" Grid.Column="0" SelectedItem="{Binding SelectedVisitation, Mode=TwoWay}" ItemsSource="{Binding RecommendedVisiations}" HorizontalAlignment="Left" Width="700" >
+        <ListView Grid.Row="0" Grid.Column="0" SelectedItem="{Binding SelectedVisitation, Mode=TwoWay}" ItemsSource="{Binding AllRules}" HorizontalAlignment="Left" Width="700" >
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <Grid>
@@ -38,11 +38,8 @@
                         <Image Grid.Column="0" HorizontalAlignment="Left" Grid.RowSpan="2" Source="../../Images/Icons/rec.png" Height="32"/>
 
                         <StackPanel HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
-                            <TextBlock HorizontalAlignment="Left" Text="{Binding Title}" FontWeight="Bold" />
-                        </StackPanel>
-                        <StackPanel HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                            <TextBlock Text="{Binding Description}" Foreground="Blue" />
-                        </StackPanel>
+                            <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" FontWeight="Bold" />
+                        </StackPanel>      
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

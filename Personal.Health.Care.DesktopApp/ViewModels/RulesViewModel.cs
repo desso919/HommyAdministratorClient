@@ -16,14 +16,15 @@ using Hospital.Models;
 using Personal.Health.Care.DesktopApp.Model;
 using Personal.Health.Services;
 using System.Windows;
+using Newtonsoft.Json;
 
 namespace Personal.Health.Care.DesktopApp.ViewModels
 {
-    public class RecommendedVisitationsViewModel : INotifyPropertyChanged
+    public class RulesViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        List<RecommendedVisitation> visiations;
-        private IRecommendedVisitationService service;
+        List<Rule> rules;
+        private IRulesService service;
         private IVisitationService visitationService;
         private RecommendedVisitation selectedVisitation;
         private ICommand addToVisitationCommand;
@@ -31,18 +32,25 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         #region Constructor
 
-        public RecommendedVisitationsViewModel()
+        public RulesViewModel()
         {
-            service = NinjectConfig.Container.Get<IRecommendedVisitationService>();
+            service = NinjectConfig.Container.Get<IRulesService>();
             visitationService = NinjectConfig.Container.Get<IVisitationService>();
             addToVisitationCommand = new RelayCommand(AddToMyVisitations);
-            update();
+            Init();
+        }
+
+        private async void Init()
+        {
+            string response = await service.getRulesNameForUser(1);
+            RulesCollection ReturnedRules = JsonConvert.DeserializeObject<RulesCollection>(response);
+            AllRules = ReturnedRules.Rules;
         }
         #endregion
 
         #region Properties
 
-        public List<RecommendedVisitation> RecommendedVisiations { get { return visiations; } set { visiations = value; NotifyPropertyChanged(); } }
+        public List<Rule> AllRules { get { return rules; } set { rules = value; NotifyPropertyChanged(); } }
 
         public RecommendedVisitation SelectedVisitation { get { return selectedVisitation; } set { HasSelectedVisitation = true; selectedVisitation = value; NotifyPropertyChanged(); } }
 
@@ -68,7 +76,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public void update()
         {
-            RecommendedVisiations = MediatorClass.RecommendedVisitation;
+            //AllRules = MediatorClass.RecommendedVisitation;
         }
 
         public void AddToMyVisitations(Object obj) {

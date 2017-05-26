@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Personal.Health.Services.ServiceInterfaces
 {
-    public interface IRecommendedVisitationService
+    public interface IRulesService
     {
-        RecommendedVisitation GetRecommendedVisitation(long id);
-
-        List<RecommendedVisitation> GetRecommendedVisitationForPatient(int age);
+        Task<string> getRulesNameForUser(int userId);
     }
 }
