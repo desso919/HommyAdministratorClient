@@ -9,12 +9,6 @@ namespace Personal.Health.Services
 {
     public interface IPatientService
     {
-        User GetPatient(long id);
-
-        User LoginWithUsername(string username, string password);
-
-        User LoginWithEGN(string username, string password);
-
-        Boolean RegisterUser(User patientToBeAdded);
+        Task<string> LoginUserAsync(string username, string password);
     }
 }

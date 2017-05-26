@@ -1,66 +1,20 @@
 ﻿using Hospital.Models;
 using System;
 using Newtonsoft.Json;
+using System.Net.Http;
 using Personal.Health.Services.Impl.ServiceImpl;
+using System.Threading.Tasks;
 
 namespace Personal.Health.Services.Impl
 {
     public class PatientService : IPatientService
     {
-        public User GetPatient(long id)
+        public async Task<string> LoginUserAsync(string username, string password)
         {
-
-            string result = WebService.getInstance().GetPatient(id);
-            if (result.Equals(ServicesUtils.EMPTY_JSON)) { return null; }
-
-            return JsonConvert.DeserializeObject<User>(result);
-        }
-
-        public User LoginWithUsername(string username, string password)
-        {
-            try
-            {
-                string result = WebService.getInstance().GetPatientByUsernameAndPassword(username, password);
-                if (result.Equals(ServicesUtils.EMPTY_JSON)) { return null; }
-
-                return JsonConvert.DeserializeObject<User>(result);
-            }
-            catch (Exception)
-            {
-                
-                throw new Exception("Could not connect to the server");
-            }          
-        }
-
-        public User LoginWithEGN(string egn, string password)
-        {
-            try
-            {
-                string result = WebService.getInstance().GetPatientByEGNAndPassword(egn, password);
-                if (result.Equals(ServicesUtils.EMPTY_JSON)) { return null; }
-
-                return JsonConvert.DeserializeObject<User>(result);
-            }
-            catch (Exception)
-            {
-                throw new Exception("Could not connect to the server");
-            }   
-        }
-
-        public Boolean RegisterUser(User patient)
-        {
-            if (patient.BirhtDate.Equals(String.Empty))
-            {
-                patient.BirhtDate = null;
-            }
-
-            bool isRegisted = WebService.getInstance().AddNewPatient(patient.Username, patient.Password, patient.FirstName, patient.SecondName, patient.LastName, patient.EGN, patient.Gender, patient.Age, patient.BirhtDate);
-            
-            if (isRegisted) 
-            { 
-                return true; 
-            }
-            return false;
+            HttpClient http = new HttpClient();
+            var myRequest = new HttpRequestMessage(HttpMethod.Get, WebService.URIAddress + "users/login?username="  + username + "&password=" + password);
+            var resp = await http.SendAsync(myRequest);
+            return await resp.Content.ReadAsStringAsync();
         }
     }
 }

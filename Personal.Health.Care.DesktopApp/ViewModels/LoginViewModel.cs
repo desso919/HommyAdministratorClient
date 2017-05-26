@@ -14,7 +14,11 @@ using System.Runtime.CompilerServices;
 using Hospital.Models;
 using System.Text.RegularExpressions;
 using System.Windows;
+using Personal.Health.Services;
 using Personal.Health.Care.DesktopApp.Model;
+using Newtonsoft.Json;
+using Personal.Health.Models;
+using Personal.Health.Care.DesktopApp.Utills;
 
 namespace Personal.Health.Care.DesktopApp.ViewModels
 {
@@ -81,10 +85,8 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         #region Login User code
 
-        public void LoginPatient(object obj)
+        public async void LoginPatient(object obj)
         {
-            User patient = null;
-
             if (Username == null || Password == null)
             {
                 Messenger.ShowMessage(" Please enter username and password first! ");
@@ -92,17 +94,14 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             }
             else
             {
-                if (true)
-                {
-                    User user = new User();
-                    user.Username = Username;
-                    user.FirstName = Username;
-                    user.LastName = "Hristov";
-                    user.Password = SecurityUtil.HashPassword(Password);
+                string response = await service.LoginUserAsync(Username, SecurityUtil.ConvertToString(password));
 
+                if (Personal.Health.Care.DesktopApp.Utills.Utill.isValidUser(response))
+                {
                     var loginWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
                     if (loginWindow != null)
                     {
+                        HommyUser user = JsonConvert.DeserializeObject<HommyUser>(response);
                         LoggedInUser.Init(user);
                         MainWindow mainWindow = new MainWindow();
                         mainWindow.Show();
@@ -118,8 +117,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
                 {
                     Messenger.ShowMessage(" Wrong Username or password. Please try again! ");
                 }
-            }
-                //patient = service.LoginWithUsername(Username, SecurityUtil.HashPassword(Password));
+            }    
         }
 
         #endregion

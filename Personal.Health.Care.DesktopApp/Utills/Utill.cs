@@ -16,6 +16,7 @@ namespace Personal.Health.Care.DesktopApp.Utills
         public static string lastNameMessage = "Please enter a valid last name";
         public static string egnMessage = "Please enter a valid EGN. It Must contain only digits!";
         public static string birthDateMessage = "Please enter a valid birth date!";
+        public static string EMPTY_JSON = "{}";
 
         public static int GetAge(string birthday)
         {
@@ -26,6 +27,34 @@ namespace Personal.Health.Care.DesktopApp.Utills
 
             return age;
         }
+
+        public static Boolean isValidUser(string user)
+        {
+            if (isValidString(user))
+            {
+                if (user.Equals(EMPTY_JSON))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+
+        public static bool isValidString(string value)
+        {
+            if (!string.IsNullOrEmpty(value) && !string.IsNullOrWhiteSpace(value))
+            {
+                return true;
+            }
+            return false;
+        }
+
 
         public static string formatDate(string date)
         {

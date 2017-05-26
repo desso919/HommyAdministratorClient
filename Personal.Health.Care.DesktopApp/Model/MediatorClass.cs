@@ -71,7 +71,7 @@ namespace Personal.Health.Care.DesktopApp.Model
 
             hospitals = NinjectConfig.Container.Get<IHospitalService>().GetAllHispitals();
             doctors = NinjectConfig.Container.Get<IDoctorService>().GetAllDoctors();
-            recommendedVisitation = NinjectConfig.Container.Get<IRecommendedVisitationService>().GetRecommendedVisitationForPatient(Utills.Utill.GetAge(LoggedInUser.GetLoggedInUser().BirhtDate));
+            //recommendedVisitation = NinjectConfig.Container.Get<IRecommendedVisitationService>().GetRecommendedVisitationForPatient(Utills.Utill.GetAge(LoggedInUser.GetLoggedInUser()));
         }
 
         public static void UpdatePatientTemplates()

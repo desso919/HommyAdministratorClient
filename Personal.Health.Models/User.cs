@@ -32,7 +32,7 @@ namespace Hospital.Models
             }
         }
 
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         public string Username { get; set; }
 
@@ -50,7 +50,7 @@ namespace Hospital.Models
 
         public string BirhtDate
         {
-            get { return Utill.formatDate(date); }
+            get { return null; }
             set { date = Convert.ToDateTime(value); }
         }
 

@@ -12,6 +12,7 @@ using Personal.Health.Care.DesktopApp.Pages.Views;
 using Personal.Health.Care.DesktopApp.Pages.UserManagement;
 using System.Windows;
 using Personal.Health.Care.DesktopApp.Model;
+using Personal.Health.Models;
 
 namespace Personal.Health.Care.DesktopApp.ViewModels
 {
@@ -33,7 +34,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             set { logoutCommand = value; }
         }
 
-        public User Patient { get { return LoggedInUser.GetLoggedInUser(); } }
+        public HommyUser User { get { return LoggedInUser.GetLoggedInUser(); } }
 
         #endregion
 
@@ -67,8 +68,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
                 MediatorClass.Visitations = null;
                 MediatorClass.RecommendedVisitation = null;
                 MediatorClass.Templates = null;
-                LoginView loginPage = new LoginView();
-                loginPage.Show();                   
+                LoginView loginPage = new LoginView();               
                 mainWindows.Close();
             }
             else

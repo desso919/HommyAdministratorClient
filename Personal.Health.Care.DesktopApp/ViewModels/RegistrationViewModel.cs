@@ -94,7 +94,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             {
                 Patient.Password = SecurityUtil.HashPassword(Password);
                 Patient.Age = Utills.Utill.GetAge(Patient.BirhtDate);
-                isAdded = service.RegisterUser(Patient);
+                isAdded = false;
 
                 if (isAdded)
                 {
@@ -103,7 +103,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
                         var loginWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
                         if (loginWindow != null)
                         {
-                            LoggedInUser.Init(Patient);
+                           // LoggedInUser.Init(User);
                             MediatorClass.Init();
                             MainWindow mainWindow = new MainWindow();
                             mainWindow.Show();

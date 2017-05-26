@@ -17,7 +17,7 @@ namespace Personal.Health.Models
 
         public long DoctorId { get; set; }
 
-        public User Patient { get; set; }
+        public HommyUser Patient { get; set; }
 
         public HospitalModel Hospital { get; set; }
 

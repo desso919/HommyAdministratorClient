@@ -19,7 +19,7 @@ namespace Hospital.Models
 
         public long DoctorId { get; set; }
 
-        public User Patient { get; set; }
+        public HommyUser Patient { get; set; }
 
         public HospitalModel Hospital { get; set; }
 
@@ -31,7 +31,7 @@ namespace Hospital.Models
 
         public string Date
         {
-            get { return Utill.formatDate(date); }
+            get { return null; }
             set { date = Convert.ToDateTime(value); }
         }
 

@@ -11,6 +11,7 @@ namespace Personal.Health.Services.Impl.ServiceImpl
     {
         private static readonly object syncLock = new object();
         private static HospitalServiceClient instance;
+        public static String URIAddress = "http://localhost:8080/HommyAdministratorService/hommy/";
 
         public static HospitalServiceClient getInstance()
         {
