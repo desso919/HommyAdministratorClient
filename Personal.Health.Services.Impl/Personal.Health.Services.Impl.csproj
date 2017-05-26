@@ -56,13 +56,13 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ServiceImpl\DoctorService.cs" />
-    <Compile Include="ServiceImpl\HistoryService.cs" />
+    <Compile Include="ServiceImpl\DeviceService.cs" />
     <Compile Include="ServiceImpl\HospitalService.cs" />
     <Compile Include="ServiceImpl\RecommendedVisitationService.cs" />
     <Compile Include="ServiceImpl\ServicesUtils.cs" />
     <Compile Include="ServiceImpl\TemplateServcie.cs" />
     <Compile Include="ServiceImpl\WebService.cs" />
-    <Compile Include="ServiceImpl\PatientService.cs" />
+    <Compile Include="ServiceImpl\UserService.cs" />
     <Compile Include="ServiceImpl\VisitationService.cs" />
   </ItemGroup>
   <ItemGroup>

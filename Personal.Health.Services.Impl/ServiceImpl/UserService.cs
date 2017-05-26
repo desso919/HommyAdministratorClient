@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Personal.Health.Services.Impl
 {
-    public class PatientService : IPatientService
+    public class UserService : IUserService
     {
         public async Task<string> LoginUserAsync(string username, string password)
         {

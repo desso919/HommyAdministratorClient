@@ -8,10 +8,10 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Style="{StaticResource ContentRoot}">
         <!-- TODO: set @SelectedSource -->
-        <mui:ModernTab Layout="Tab" SelectedSource="/Pages/Views/HistoryView.xaml" >
+        <mui:ModernTab Layout="Tab" SelectedSource="/Pages/Views/MyDevicesView.xaml" >
             <mui:ModernTab.Links>
-                <mui:Link DisplayName="My history"  Source="/Pages/Views/HistoryView.xaml" />
-                <mui:Link DisplayName="Add history" Source="Pages/Options/HistoryOptions/AddHistoryPage.xaml"/>                
+                <mui:Link DisplayName="My Devices"  Source="/Pages/Views/MyDevicesView.xaml" />
+                <mui:Link DisplayName="Add new Device" Source="Pages/Options/HistoryOptions/AddHistoryPage.xaml"/>                
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

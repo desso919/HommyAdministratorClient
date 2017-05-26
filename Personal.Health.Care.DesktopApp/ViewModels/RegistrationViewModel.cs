@@ -23,14 +23,14 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         private RegistrationFormModel registrationFormModel;
         private ICommand addPatientCommand;
-        private IPatientService service;
+        private IUserService service;
         private SecureString password;
         private User patient;
         
         public RegistrationViewModel()
         {
             patient = new User();          
-            service = NinjectConfig.Container.Get<IPatientService>();
+            service = NinjectConfig.Container.Get<IUserService>();
             addPatientCommand = new RelayCommand(RegisterPatient);
             registrationFormModel = RegistrationFormModel.GetInstance();
         }

@@ -51,7 +51,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
                     MediatorClass.UpdatePatientHistory();
 
                     SheduledVisitationsViewModel.GetInstance().update();
-                    HistoryViewModel.GetInstance().update();
+                   // MyDevicesViewModel.GetInstance().update();
                     message = "Moved Successfully";
                 }
                 else

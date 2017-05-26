@@ -101,7 +101,7 @@ namespace Personal.Health.Record.ViewModels
 
         public void ViewHistory(object id)
         {
-            IHistoryService history = new HistoryService();
+            IDeviceService history = new DeviceService();
         }
 
         public void ViewSchediledVisitations(object id)

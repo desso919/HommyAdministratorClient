@@ -16,7 +16,7 @@
         <mui:LinkGroup DisplayName="Hommy configuration">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Home" Source="/Pages/Home.xaml" />
-                <mui:Link DisplayName="My Connected Devices"  Source="/Pages/NavigationPages/HistoryTab.xaml" />
+                <mui:Link DisplayName="My Connected Devices"  Source="/Pages/NavigationPages/MyConnectedDevicesTab.xaml" />
                 <mui:Link DisplayName="Events" Source="/Pages/NavigationPages/VisitationTab.xaml"/>
                 <mui:Link DisplayName="My Rules" Source="/Pages/NavigationPages/RecommendedVisitationsTab.xaml"/>                
             </mui:LinkGroup.Links>

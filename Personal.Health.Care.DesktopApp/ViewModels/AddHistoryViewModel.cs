@@ -24,13 +24,13 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private ICommand addHistoryCommand;
-        private IHistoryService service;
+        private IDeviceService service;
         private History history;
 
         public AddHistoryViewModel()
         {
             history = new History();
-            service = NinjectConfig.Container.Get<IHistoryService>();
+            service = NinjectConfig.Container.Get<IDeviceService>();
             addHistoryCommand = new RelayCommand(AddHistoryRecord);
         }
 
@@ -81,13 +81,13 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             if (Utills.Utill.isValidHistory(History))
             {
                 History.Patient = LoggedInUser.GetLoggedInUser();
-                Boolean isAdded = service.addHistory(History);
+                Boolean isAdded = false;
                 string message;
 
                 if (isAdded)
                 {
                     MediatorClass.UpdatePatientHistory();
-                    HistoryViewModel.GetInstance().update();
+                    //MyDevicesViewModel.GetInstance().update();
                     message = "History Added Successfully";
                 }
                 else

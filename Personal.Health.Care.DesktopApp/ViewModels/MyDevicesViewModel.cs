@@ -13,15 +13,17 @@ using Personal.Health.Care.DesktopApp.Model;
 using System.Windows.Input;
 using Personal.Health.Care.DesktopApp.Pages.Views;
 using Personal.Health.Care.DesktopApp.Utills;
+using Personal.Health.Models;
+using Newtonsoft.Json;
 
 namespace Personal.Health.Care.DesktopApp.ViewModels
 {
-    public class HistoryViewModel : INotifyPropertyChanged
+    public class MyDevicesViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private static HistoryViewModel instance;        
-        private List<History> histories;
-        private IHistoryService service;
+        private static MyDevicesViewModel instance;        
+        private List<Device> devices;
+        private IDeviceService service;
         private ICommand viewHistoryCommand;
         private History selectedHistory;
         private Boolean hasSelectedTemplate;
@@ -29,12 +31,19 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         #region Constructor
 
-        private HistoryViewModel()
+        private MyDevicesViewModel()
         {
-            service = NinjectConfig.Container.Get<IHistoryService>();
+            service = NinjectConfig.Container.Get<IDeviceService>();
             viewHistoryCommand = new RelayCommand(ViewSelectedHistory);
-            Init();
-            update();
+
+            Init();       
+        }
+
+        private async void Init()
+        {
+            string response = await service.GetAllDevices();
+            DevicesCollection devices = JsonConvert.DeserializeObject<DevicesCollection>(response);
+            AllDevices = devices.Devices;
         }
 
         private void ViewSelectedHistory(object obj)
@@ -44,11 +53,11 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         }
 
 
-        public static HistoryViewModel GetInstance()
+        public static MyDevicesViewModel GetInstance()
         {
             if (instance == null)
             {
-                instance = new HistoryViewModel();
+                instance = new MyDevicesViewModel();
             }
             return instance;
         }
@@ -56,7 +65,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         #region Properties
 
-        public List<History> Histories { get { return histories; } set { histories = value; NotifyPropertyChanged(); } }
+        public List<Device> AllDevices { get { return devices; } set { devices = value; NotifyPropertyChanged(); } }
 
         public History SelectedHistory { get { return selectedHistory; } set { HasSelectedVisitation = true; selectedHistory = value; NotifyPropertyChanged(); } }
 
@@ -76,15 +85,5 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             }
         }
         #endregion
-
-        public void Init()
-        {
-            MediatorClass.UpdatePatientHistory();
-        }
-
-        public void update()
-        {
-            Histories = MediatorClass.Histories;
-        }
     }
 }

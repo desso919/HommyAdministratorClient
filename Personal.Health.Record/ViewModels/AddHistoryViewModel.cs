@@ -17,7 +17,7 @@ namespace Personal.Health.Record.ViewModels
 {
     class AddHistoryViewModel : INotifyPropertyChanged
     {
-        private IHistoryService service;
+        private IDeviceService service;
 
         private long hospitalId;
         private long doctorId;
@@ -30,7 +30,7 @@ namespace Personal.Health.Record.ViewModels
         {
             addHistoryCommand = new RelayCommand(AddHistoryRecord, param => this.canExecute);
             toggleExecuteCommand = new RelayCommand(ChangeCanExecute);
-            service = NinjectConfig.Container.Get<IHistoryService>();
+            service = NinjectConfig.Container.Get<IDeviceService>();
         }
 
         #region Properties 

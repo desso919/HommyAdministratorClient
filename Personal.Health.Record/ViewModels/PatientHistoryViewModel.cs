@@ -15,12 +15,12 @@ namespace Personal.Health.Record.ViewModels
 {
     class PatientHistoryViewModel : INotifyPropertyChanged
     {
-        private IHistoryService service;
+        private IDeviceService service;
         private List<History> histories;
 
          public PatientHistoryViewModel()
         {
-            service = NinjectConfig.Container.Get<IHistoryService>();
+            service = NinjectConfig.Container.Get<IDeviceService>();
             showHistoriesCommand = new RelayCommand(ShowHistories, param => this.canExecute);
             toggleExecuteCommand = new RelayCommand(ChangeCanExecute);
         }

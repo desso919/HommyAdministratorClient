@@ -175,7 +175,6 @@ C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdminis
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Personal.Health.Care.DesktopApp.csprojResolveAssemblyReference.cache
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\RecommendedVisitationsTab.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\TemplatesTab.baml
-C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\HistoryTab.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\VisitationTab.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\HistoryOptions\MyHistoryPage.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\VisitationOptions\ScheduledVisitationsPage.baml
@@ -190,7 +189,6 @@ C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdminis
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\RecommendedVisitationsTab.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\TemplatesTab.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\HistoryOptions\AddHistoryPage.g.cs
-C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\HistoryTab.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\VisitationTab.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\HistoryOptions\MyHistoryPage.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\TemplateOptions\AddTemplateOption.g.cs
@@ -208,7 +206,6 @@ C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdminis
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\AskDiagnoseView.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\EditVisitationView.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\ExitConfirmView.g.cs
-C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\HistoryView.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\MessageWindow.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\ModernDialog1.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\MoveToVisitationView.g.cs
@@ -234,7 +231,6 @@ C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdminis
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\AskDiagnoseView.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\EditVisitationView.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\ExitConfirmView.baml
-C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\HistoryView.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\ModernDialog1.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\MoveToVisitationView.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\RecommendedVisitationsView.baml
@@ -244,3 +240,7 @@ C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdminis
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Personal.Health.Care.DesktopApp.g.resources
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Personal.Health.Care.DesktopApp.exe
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Personal.Health.Care.DesktopApp.pdb
+C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\MyConnectedDevicesTab.baml
+C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\MyConnectedDevicesTab.g.cs
+C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\MyDevicesView.g.cs
+C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\MyDevicesView.baml

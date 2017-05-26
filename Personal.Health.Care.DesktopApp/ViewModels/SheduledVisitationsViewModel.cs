@@ -24,7 +24,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         private static SheduledVisitationsViewModel instance;
         List<ScheduledVisitation> visitations;
         private IVisitationService service;
-        private IHistoryService historyService;
+        private IDeviceService historyService;
         private ScheduledVisitation selectedVisitation;
         private ICommand moveToHistoryCommand;
         private ICommand editVisitationCommand;
@@ -36,7 +36,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         private SheduledVisitationsViewModel()
         {
             service = NinjectConfig.Container.Get<IVisitationService>();
-            historyService = NinjectConfig.Container.Get<IHistoryService>();
+            historyService = NinjectConfig.Container.Get<IDeviceService>();
             moveToHistoryCommand = new RelayCommand(showDiagnoseDialog);
             editVisitationCommand = new RelayCommand(EditVisitation);
    

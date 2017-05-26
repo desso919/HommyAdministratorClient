@@ -24,7 +24,7 @@ namespace Personal.Health.Care.DesktopApp.Pages.Views
         public HistoryView()
         {
             InitializeComponent();
-            this.DataContext = HistoryViewModel.GetInstance();
+            this.DataContext = MyDevicesViewModel.GetInstance();
         }
     }
 }

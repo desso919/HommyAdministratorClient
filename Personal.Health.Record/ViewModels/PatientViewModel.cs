@@ -17,11 +17,11 @@ namespace Personal.Health.Record.ViewModels
     public class PatientViewModel : INotifyPropertyChanged
     {
         private User logedInPatient;
-        private IPatientService service;
+        private IUserService service;
 
         public PatientViewModel()
         {
-            service = NinjectConfig.Container.Get<IPatientService>();
+            service = NinjectConfig.Container.Get<IUserService>();
             showPatientCommand = new RelayCommand(showPatient);
         }
 

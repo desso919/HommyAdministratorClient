@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Personal.Health.Services
 {
-    public interface IPatientService
+    public interface IDeviceService
     {
-        Task<string> LoginUserAsync(string username, string password);
+        Task<string> GetAllDevices();
     }
 }

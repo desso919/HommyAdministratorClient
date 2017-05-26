@@ -13,7 +13,7 @@ namespace Personal.Health.Record.Models
     {
          public Boolean addHistory(History history)
          {
-             IHistoryService historyService = new HistoryService();
+             IDeviceService historyService = new DeviceService();
              Boolean isAdded = historyService.addHistory(history);
              return isAdded;
          }

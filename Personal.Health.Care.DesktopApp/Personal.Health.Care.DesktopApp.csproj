@@ -105,8 +105,8 @@
     <Compile Include="Pages\Options\HistoryOptions\AddHistoryPage.xaml.cs">
       <DependentUpon>AddHistoryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\NavigationPages\HistoryTab.xaml.cs">
-      <DependentUpon>HistoryTab.xaml</DependentUpon>
+    <Compile Include="Pages\NavigationPages\MyConnectedDevicesTab.xaml.cs">
+      <DependentUpon>MyConnectedDevicesTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\NavigationPages\VisitationTab.xaml.cs">
       <DependentUpon>VisitationTab.xaml</DependentUpon>
@@ -135,8 +135,8 @@
     <Compile Include="Pages\Views\ExitConfirmView.xaml.cs">
       <DependentUpon>ExitConfirmView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Views\HistoryView.xaml.cs">
-      <DependentUpon>HistoryView.xaml</DependentUpon>
+    <Compile Include="Pages\Views\MyDevicesView.xaml.cs">
+      <DependentUpon>MyDevicesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Views\MessageWindow.xaml.cs">
       <DependentUpon>MessageWindow.xaml</DependentUpon>
@@ -173,7 +173,7 @@
     <Compile Include="ViewModels\AskDiagnoseViewModel.cs" />
     <Compile Include="ViewModels\EditTemplateViewModel.cs" />
     <Compile Include="ViewModels\EditVisitationViewModel.cs" />
-    <Compile Include="ViewModels\HistoryViewModel.cs" />
+    <Compile Include="ViewModels\MyDevicesViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\LoggedInUser.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -205,7 +205,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\NavigationPages\HistoryTab.xaml">
+    <Page Include="Pages\NavigationPages\MyConnectedDevicesTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -303,7 +303,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Views\HistoryView.xaml">
+    <Page Include="Pages\Views\MyDevicesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

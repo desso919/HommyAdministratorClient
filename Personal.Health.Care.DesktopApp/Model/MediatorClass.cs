@@ -87,7 +87,7 @@ namespace Personal.Health.Care.DesktopApp.Model
 
         public static void UpdatePatientHistory()
         {
-            history = NinjectConfig.Container.Get<IHistoryService>().GetAllHistoryForThisPatient(LoggedInUser.GetLoggedInUser().Id);
+            //history = NinjectConfig.Container.Get<IDeviceService>().GetAllHistoryForThisPatient(LoggedInUser.GetLoggedInUser().Id);
             sortHistory();
         }
 

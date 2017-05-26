@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace Personal.Health.Services
 {
-    public interface IHistoryService
+    public interface IUserService
     {
-        History GetHistory(long id);
-
-        List<History> GetAllHistoryForThisPatient(long patientId);
-
-        Boolean addHistory(History history);
+        Task<string> LoginUserAsync(string username, string password);
     }
 }

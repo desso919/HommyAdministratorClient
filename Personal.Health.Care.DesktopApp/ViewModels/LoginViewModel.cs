@@ -14,18 +14,17 @@ using System.Runtime.CompilerServices;
 using Hospital.Models;
 using System.Text.RegularExpressions;
 using System.Windows;
-using Personal.Health.Services;
 using Personal.Health.Care.DesktopApp.Model;
 using Newtonsoft.Json;
 using Personal.Health.Models;
-using Personal.Health.Care.DesktopApp.Utills;
+
 
 namespace Personal.Health.Care.DesktopApp.ViewModels
 {
     public class LoginViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private IPatientService service;
+        private IUserService service;
         private ICommand loginCommand;
         private string username;
         private SecureString password;
@@ -35,7 +34,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public LoginViewModel()
         {
             NinjectConfig.ConfigureContainer();
-            service = NinjectConfig.Container.Get<IPatientService>();
+            service = NinjectConfig.Container.Get<IUserService>();
             loginCommand = new RelayCommand(LoginPatient);
         }
 
@@ -89,6 +88,9 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         {
             if (Username == null || Password == null)
             {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                //loginWindow.Close();
                 Messenger.ShowMessage(" Please enter username and password first! ");
                 return;
             }
@@ -96,7 +98,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             {
                 string response = await service.LoginUserAsync(Username, SecurityUtil.ConvertToString(password));
 
-                if (Personal.Health.Care.DesktopApp.Utills.Utill.isValidUser(response))
+                if (Utill.isValidUser(response))
                 {
                     var loginWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
                     if (loginWindow != null)

@@ -23,7 +23,7 @@ namespace Personal.Health.Record.ViewModels
     class LoginViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private IPatientService service;
+        private IUserService service;
         private ICommand loginCommand;
         private string loginCredential;
         private SecureString password;
@@ -32,7 +32,7 @@ namespace Personal.Health.Record.ViewModels
 
         public LoginViewModel()
         {
-            service = NinjectConfig.Container.Get<IPatientService>();
+            service = NinjectConfig.Container.Get<IUserService>();
             loginCommand = new RelayCommand(LoginPatient);
         }
 

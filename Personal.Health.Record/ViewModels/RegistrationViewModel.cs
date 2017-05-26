@@ -16,13 +16,13 @@ namespace Personal.Health.Record.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private ICommand registerCommand;
-        private IPatientService service;
+        private IUserService service;
 
         #region Constructor
 
         public RegistrationViewModel()
         {
-            service = NinjectConfig.Container.Get<IPatientService>();
+            service = NinjectConfig.Container.Get<IUserService>();
             registerCommand = new RelayCommand(RegisterPatient);
         }
 
