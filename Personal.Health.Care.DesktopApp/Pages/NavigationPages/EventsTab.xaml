@@ -8,11 +8,11 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Style="{StaticResource ContentRoot}">
         <!-- TODO: set @SelectedSource -->
-        <mui:ModernTab Layout="Tab" SelectedSource="/Pages/Views/ScheduledVisitationView.xaml">
+        <mui:ModernTab Layout="Tab" SelectedSource="/Pages/Views/EventsView.xaml">
             <mui:ModernTab.Links>
                 <!-- TODO: set @Source -->
-                <mui:Link DisplayName="Scheduled visitations" Source="/Pages/Views/ScheduledVisitationView.xaml"/>
-                <mui:Link DisplayName="Schedule new visitation"  Source="Pages/Options/VisitationOptions/AddVisitationOption.xaml"/>
+                <mui:Link DisplayName="My Events" Source="/Pages/Views/EventsView.xaml"/>
+                <mui:Link DisplayName="Add New Event"  Source="Pages/Options/VisitationOptions/AddVisitationOption.xaml"/>
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

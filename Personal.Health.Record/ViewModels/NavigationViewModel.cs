@@ -25,7 +25,7 @@ namespace Personal.Health.Record.ViewModels
         private ICommand viewHistoryCommand;
         private ICommand viewSchediledVisitationsCommand;
         List<ScheduledVisitation> visitations;
-        private IVisitationService service;
+        private IEventService service;
 
         #region Properties
         public List<ScheduledVisitation> Visitations { get { return visitations; } set { visitations = value; NotifyPropertyChanged(); } }
@@ -33,7 +33,7 @@ namespace Personal.Health.Record.ViewModels
 
         public NavigationViewModel()
         {
-            service = NinjectConfig.Container.Get<IVisitationService>();
+            service = NinjectConfig.Container.Get<IEventService>();
             viewProfileCommand = new RelayCommand(ViewProfile);
             viewHospitalsCommand = new RelayCommand(ViewHospitals);
             viewDoctorsCommand = new RelayCommand(ViewDoctors);
@@ -96,7 +96,7 @@ namespace Personal.Health.Record.ViewModels
 
         public void ViewDoctors(object id)
         {
-            IDoctorService doctorService = new DoctorService();
+            IEventService doctorService = new EventService();
         }
 
         public void ViewHistory(object id)
@@ -106,7 +106,7 @@ namespace Personal.Health.Record.ViewModels
 
         public void ViewSchediledVisitations(object id)
         {
-            IVisitationService SchediledVisitations = new VisitationService();
+            IEventService SchediledVisitations = new VisitationService();
         }
         #endregion
 

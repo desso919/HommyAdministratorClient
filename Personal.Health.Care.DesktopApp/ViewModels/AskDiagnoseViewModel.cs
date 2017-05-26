@@ -43,14 +43,14 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
                 Diagnose = Diagnose;
                 string message;
 
-                Boolean isAdded = NinjectConfig.Container.Get<IVisitationService>().MakeVisitationHistory(Visitation.Id, Diagnose);
+                Boolean isAdded = false;
 
                 if (isAdded)
                 {
                     MediatorClass.UpdatePatientVisitations();
                     MediatorClass.UpdatePatientHistory();
 
-                    SheduledVisitationsViewModel.GetInstance().update();
+                    EventsViewModel.GetInstance().update();
                    // MyDevicesViewModel.GetInstance().update();
                     message = "Moved Successfully";
                 }

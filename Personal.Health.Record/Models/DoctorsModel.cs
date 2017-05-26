@@ -13,7 +13,7 @@ namespace Personal.Health.Record.Models
     {
        public List<Doctor> getDoctors()
         {
-            IDoctorService doctorService = new DoctorService();
+            IEventService doctorService = new EventService();
             List<Doctor> doctors = doctorService.GetAllDoctors();
             return doctors;
         }

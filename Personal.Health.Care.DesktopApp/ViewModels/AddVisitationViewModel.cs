@@ -23,13 +23,13 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         private ICommand addVisitationCommand;
         private ICommand loadTemplateCommand;
-        private IVisitationService service;
+        private IEventService service;
         private ScheduledVisitation visitation;
 
         public AddVisitationViewModel()
         {
             visitation = new ScheduledVisitation();
-            service = NinjectConfig.Container.Get<IVisitationService>();
+            service = NinjectConfig.Container.Get<IEventService>();
             addVisitationCommand = new RelayCommand(AddVisitation);
             loadTemplateCommand = new RelayCommand(LoadTemplateMethod);
         }
@@ -98,13 +98,13 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             if (Utills.Utill.isValidVisitation(Visitation))
             {
                 Visitation.Patient = LoggedInUser.GetLoggedInUser();
-                Boolean isAdded = service.AddNewScheduleVisitation(Visitation);
+                Boolean isAdded = false;
                 string message;
 
                 if (isAdded)
                 {
                     MediatorClass.UpdatePatientVisitations();
-                    SheduledVisitationsViewModel.GetInstance().update();
+                    EventsViewModel.GetInstance().update();
                     message = "Add Visitation Successfully";
                     Visitation = new ScheduledVisitation();
                 }

@@ -70,7 +70,7 @@ namespace Personal.Health.Care.DesktopApp.Model
             long thisPatientId = LoggedInUser.GetLoggedInUser().Id;
 
             hospitals = NinjectConfig.Container.Get<IHospitalService>().GetAllHispitals();
-            doctors = NinjectConfig.Container.Get<IDoctorService>().GetAllDoctors();
+            //doctors = NinjectConfig.Container.Get<IEventService>().GetAllDoctors();
             //recommendedVisitation = NinjectConfig.Container.Get<IRecommendedVisitationService>().GetRecommendedVisitationForPatient(Utills.Utill.GetAge(LoggedInUser.GetLoggedInUser()));
         }
 
@@ -81,7 +81,7 @@ namespace Personal.Health.Care.DesktopApp.Model
 
         public static void UpdatePatientVisitations()
         {
-            visitations = NinjectConfig.Container.Get<IVisitationService>().GetAllScheduledVisitationsForThisPatient(LoggedInUser.GetLoggedInUser().Id);
+           // visitations = NinjectConfig.Container.Get<IEventService>().GetAllScheduledVisitationsForThisPatient(LoggedInUser.GetLoggedInUser().Id);
             sortVisitations();
         }
 

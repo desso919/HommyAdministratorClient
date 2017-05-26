@@ -16,7 +16,7 @@ namespace Personal.Health.Record.ViewModels
     class SchedulingVisitationViewModel
     {
         private SchedulingVisitationModul schedulingVisitationModul;
-        private IVisitationService service;
+        private IEventService service;
 
         private long hospitalId;
         private long doctorId;
@@ -26,7 +26,7 @@ namespace Personal.Health.Record.ViewModels
 
         public SchedulingVisitationViewModel()
         {
-            service = NinjectConfig.Container.Get<IVisitationService>();
+            service = NinjectConfig.Container.Get<IEventService>();
             addNewScheduledVisitationCommand = new RelayCommand(ScheduleNewVisitation, param => this.canExecute);
             toggleExecuteCommand = new RelayCommand(ChangeCanExecute);
             schedulingVisitationModul = new SchedulingVisitationModul();

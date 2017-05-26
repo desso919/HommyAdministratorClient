@@ -16,14 +16,14 @@ namespace Personal.Health.Record.ViewModels
 {
     public class DoctorsViewModel : INotifyPropertyChanged
     {
-        private IDoctorService service;
+        private IEventService service;
         private List<Doctor> doctors;
 
         public DoctorsViewModel()
         {
             showDoctorsCommand = new RelayCommand(ShowDoctors, param => this.canExecute);
             toggleExecuteCommand = new RelayCommand(ChangeCanExecute);
-            service = NinjectConfig.Container.Get<IDoctorService>();
+            service = NinjectConfig.Container.Get<IEventService>();
         }
 
         #region Properties 

@@ -69,7 +69,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         }
         #endregion
 
-        #region Move to my visitations code
+        #region Move to my events code
 
         private void MoveToVisitation(object obj)
         {
@@ -81,13 +81,13 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
                 if (NewVisitation != null)
                 {
                     NewVisitation.Patient = LoggedInUser.GetLoggedInUser();
-                    isAdded = NinjectConfig.Container.Get<IVisitationService>().AddNewScheduleVisitation(newVisitation);
+                    isAdded = false;
                 }
 
                 if (isAdded)
                 {
                     MediatorClass.UpdatePatientVisitations();
-                    SheduledVisitationsViewModel.GetInstance().update();
+                    EventsViewModel.GetInstance().update();
                     message = "Added Successfully";
                 }
                 else

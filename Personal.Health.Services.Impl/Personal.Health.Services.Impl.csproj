@@ -55,7 +55,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="ServiceImpl\DoctorService.cs" />
+    <Compile Include="ServiceImpl\EventService.cs" />
     <Compile Include="ServiceImpl\DeviceService.cs" />
     <Compile Include="ServiceImpl\HospitalService.cs" />
     <Compile Include="ServiceImpl\RulesService.cs" />

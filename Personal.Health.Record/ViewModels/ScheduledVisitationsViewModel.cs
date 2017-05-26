@@ -74,7 +74,7 @@ namespace Personal.Health.Record.ViewModels
 
         public void ShowVisitations(object obj)
         {
-            IVisitationService visitationService = new VisitationService();
+            IEventService visitationService = new VisitationService();
             Visitations = visitationService.GetAllScheduledVisitationsForThisPatient(3);
             if (Visitations.Count == 0)
             {

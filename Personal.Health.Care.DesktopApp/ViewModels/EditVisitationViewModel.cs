@@ -73,12 +73,12 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         private void SaveVisitation(object obj)
         {
-            bool isSuccessfullyEdited = NinjectConfig.Container.Get<IVisitationService>().EditVisitation(Visitation);
+            bool isSuccessfullyEdited = false;
 
             if (isSuccessfullyEdited)
             {
                 MediatorClass.UpdatePatientVisitations();
-                SheduledVisitationsViewModel.GetInstance().update();
+                EventsViewModel.GetInstance().update();
                 MessageBox.Show("Result", "Visitation Successfully Edited");
             }
             else

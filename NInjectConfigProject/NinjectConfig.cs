@@ -20,7 +20,7 @@ namespace NInjectConfigProject
             Container = new StandardKernel();
             Container.Bind<IUserService>().To<UserService>().InTransientScope();
             Container.Bind<IHospitalService>().To<HospitalService>().InTransientScope();
-            Container.Bind<IDoctorService>().To<DoctorService>().InTransientScope();
+            Container.Bind<IEventService>().To<EventService>().InTransientScope();
             Container.Bind<IDeviceService>().To<DeviceService>().InTransientScope();
             Container.Bind<IVisitationService>().To<VisitationService>().InTransientScope();
             Container.Bind<ITemplateService>().To<TemplateServcie>().InTransientScope();

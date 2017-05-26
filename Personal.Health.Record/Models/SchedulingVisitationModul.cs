@@ -13,7 +13,7 @@ namespace Personal.Health.Record.Models
     {
         public Boolean AddNewScheduleVisitation(ScheduledVisitation visitatin)
         {
-            IVisitationService visitationService = new VisitationService();
+            IEventService visitationService = new VisitationService();
             Boolean isAdded = visitationService.AddNewScheduleVisitation(visitatin);
             return isAdded;
         }

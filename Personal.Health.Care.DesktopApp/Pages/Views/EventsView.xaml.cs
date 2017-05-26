@@ -24,7 +24,7 @@ namespace Personal.Health.Care.DesktopApp.Pages.Views
         public ScheduledVisitationView()
         {
             InitializeComponent();
-            this.DataContext = SheduledVisitationsViewModel.GetInstance();
+            this.DataContext = EventsViewModel.GetInstance();
         }
     }
 }

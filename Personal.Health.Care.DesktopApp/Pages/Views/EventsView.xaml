@@ -19,7 +19,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <ListView Grid.Row="0" Grid.Column="0" SelectedItem="{Binding SelectedVisitation}" ItemsSource="{Binding Visitations}" SelectionMode="Single" HorizontalAlignment="Left" Width="700" >
+        <ListView Grid.Row="0" Grid.Column="0" SelectedItem="{Binding SelectedVisitation}" ItemsSource="{Binding AllEvents}" SelectionMode="Single" HorizontalAlignment="Left" Width="700" >
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <Grid>
@@ -35,10 +35,10 @@
                         <Image Grid.Column="0" HorizontalAlignment="Left" Grid.RowSpan="2" Source="../../Images/Icons/scheduled.png" Height="32"/>
 
                         <StackPanel HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
-                            <TextBlock HorizontalAlignment="Left" Text="{Binding Reason}" FontWeight="Bold" />
+                            <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" FontWeight="Bold" />
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                            <TextBlock Text="{Binding Path=Date}" Foreground="Blue" />
+                            <TextBlock Text="{Binding Description}" Foreground="Blue" />
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

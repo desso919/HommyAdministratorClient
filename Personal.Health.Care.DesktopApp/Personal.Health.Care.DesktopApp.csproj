@@ -108,8 +108,8 @@
     <Compile Include="Pages\NavigationPages\MyConnectedDevicesTab.xaml.cs">
       <DependentUpon>MyConnectedDevicesTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\NavigationPages\VisitationTab.xaml.cs">
-      <DependentUpon>VisitationTab.xaml</DependentUpon>
+    <Compile Include="Pages\NavigationPages\EventsTab.xaml.cs">
+      <DependentUpon>EventsTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Options\TemplateOptions\AddTemplateOption.xaml.cs">
       <DependentUpon>AddTemplateOption.xaml</DependentUpon>
@@ -150,8 +150,8 @@
     <Compile Include="Pages\Views\RulesView.xaml.cs">
       <DependentUpon>RulesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Views\ScheduledVisitationView.xaml.cs">
-      <DependentUpon>ScheduledVisitationView.xaml</DependentUpon>
+    <Compile Include="Pages\Views\EventsView.xaml.cs">
+      <DependentUpon>EventsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Views\SelectTemplateView.xaml.cs">
       <DependentUpon>SelectTemplateView.xaml</DependentUpon>
@@ -182,7 +182,7 @@
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RulesViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
-    <Compile Include="ViewModels\SheduledVisitationsViewModel.cs" />
+    <Compile Include="ViewModels\EventsViewModel.cs" />
     <Compile Include="ViewModels\TemplatesViewModel.cs" />
     <Compile Include="ViewModels\ViewHistoryViewModel.cs" />
     <Page Include="MainWindow.xaml">
@@ -209,7 +209,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\NavigationPages\VisitationTab.xaml">
+    <Page Include="Pages\NavigationPages\EventsTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -323,7 +323,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Views\ScheduledVisitationView.xaml">
+    <Page Include="Pages\Views\EventsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

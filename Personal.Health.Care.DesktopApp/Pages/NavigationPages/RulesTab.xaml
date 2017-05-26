@@ -11,7 +11,8 @@
         <mui:ModernTab Layout="Tab" SelectedSource="Pages/Views/RulesView.xaml">
             <mui:ModernTab.Links>
                 <!-- TODO: set @Source -->
-                <mui:Link DisplayName="Recommended for me" Source="Pages/Views/RulesView.xaml"  />                
+                <mui:Link DisplayName="My Rules" Source="Pages/Views/RulesView.xaml"  />
+                <mui:Link DisplayName="Add New Rule" Source="Pages/Options/VisitationOptions/AddVisitationOption.xaml"  />
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

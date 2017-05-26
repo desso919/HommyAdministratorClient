@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace Personal.Health.Services
 {
-    public interface IDoctorService
+    public interface IEventService
     {
-        List<Doctor> GetAllDoctors();
-
-        Doctor getDoctor(long id);
-
-        List<Doctor> GetAllDoctorsFromHospital(long hospital_id);
+        Task<string> GetAllEvents();
     }
 }

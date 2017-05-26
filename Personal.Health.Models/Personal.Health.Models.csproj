@@ -45,6 +45,7 @@
     <Compile Include="DevicesCollection.cs" />
     <Compile Include="Doctor.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="EventsCollection.cs" />
     <Compile Include="History.cs" />
     <Compile Include="HommyUser.cs" />
     <Compile Include="HospitalModel.cs" />

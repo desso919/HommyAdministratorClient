@@ -15,15 +15,17 @@ using System.Windows;
 using Personal.Health.Care.DesktopApp.Pages.Views;
 using FluentDateTime;
 using Personal.Health.Care.DesktopApp.Model;
+using Newtonsoft.Json;
+using Personal.Health.Models;
 
 namespace Personal.Health.Care.DesktopApp.ViewModels
 {
-    public class SheduledVisitationsViewModel : INotifyPropertyChanged
+    public class EventsViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private static SheduledVisitationsViewModel instance;
-        List<ScheduledVisitation> visitations;
-        private IVisitationService service;
+        private static EventsViewModel instance;
+        List<Event> events;
+        private IEventService service;
         private IDeviceService historyService;
         private ScheduledVisitation selectedVisitation;
         private ICommand moveToHistoryCommand;
@@ -33,9 +35,9 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         #region Constructor
 
-        private SheduledVisitationsViewModel()
+        private EventsViewModel()
         {
-            service = NinjectConfig.Container.Get<IVisitationService>();
+            service = NinjectConfig.Container.Get<IEventService>();
             historyService = NinjectConfig.Container.Get<IDeviceService>();
             moveToHistoryCommand = new RelayCommand(showDiagnoseDialog);
             editVisitationCommand = new RelayCommand(EditVisitation);
@@ -44,11 +46,11 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             update();
         }
 
-        public static SheduledVisitationsViewModel GetInstance()
+        public static EventsViewModel GetInstance()
         {
             if (instance == null)
             {
-                instance = new SheduledVisitationsViewModel();
+                instance = new EventsViewModel();
             }
             return instance;
         }
@@ -57,7 +59,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         #region Properties
 
-        public List<ScheduledVisitation> Visitations { get { return visitations; } set { visitations = value; NotifyPropertyChanged(); } } 
+        public List<Event> AllEvents { get { return events; } set { events = value; NotifyPropertyChanged(); } } 
 
         public ICommand MoveToHistoryCommand { get { return moveToHistoryCommand; } set { moveToHistoryCommand = value; NotifyPropertyChanged(); } }
 
@@ -96,14 +98,16 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             edit.ShowDialog();
         }
 
-        public void Init()
+        public async void Init()
         {
-            MediatorClass.UpdatePatientVisitations();
+            string response = await service.GetAllEvents();
+            EventsCollection devices = JsonConvert.DeserializeObject<EventsCollection>(response);
+            AllEvents = devices.Events;      
         }
 
         public void update()
         {
-            Visitations = MediatorClass.Visitations;
+           // AllEvents = MediatorClass.AllEvents;
         }
 
         #endregion

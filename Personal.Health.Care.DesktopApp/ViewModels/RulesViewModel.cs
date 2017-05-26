@@ -25,7 +25,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         List<Rule> rules;
         private IRulesService service;
-        private IVisitationService visitationService;
+        private IEventService visitationService;
         private RecommendedVisitation selectedVisitation;
         private ICommand addToVisitationCommand;
         private Boolean isSelected;
@@ -35,7 +35,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public RulesViewModel()
         {
             service = NinjectConfig.Container.Get<IRulesService>();
-            visitationService = NinjectConfig.Container.Get<IVisitationService>();
+            visitationService = NinjectConfig.Container.Get<IEventService>();
             addToVisitationCommand = new RelayCommand(AddToMyVisitations);
             Init();
         }
@@ -72,7 +72,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         #endregion
 
 
-        #region Show Recommended Visitations Code
+        #region Show Recommended AllEvents Code
 
         public void update()
         {
