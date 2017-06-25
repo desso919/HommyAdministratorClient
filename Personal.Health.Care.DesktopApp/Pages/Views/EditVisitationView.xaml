@@ -14,7 +14,7 @@
                   Style="{StaticResource BlankWindow}">
 
     <Window.DataContext>
-        <local:AddVisitationViewModel/>
+        <local:AddRuleViewModel/>
     </Window.DataContext>
     
     <Grid>

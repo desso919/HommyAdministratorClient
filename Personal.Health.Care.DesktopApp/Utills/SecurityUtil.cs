@@ -39,13 +39,10 @@ namespace Personal.Health.Care.DesktopApp.Utills
 
         private static string DecryptPassword(SecureString encryptedPassword)
         {
-            try
-            {
+            try {
                 var passwordBSTR = Marshal.SecureStringToBSTR(encryptedPassword);
                 return Marshal.PtrToStringBSTR(passwordBSTR);
-            }
-            catch
-            {
+            }catch {
                 return string.Empty;
             }
         }
@@ -65,6 +62,7 @@ namespace Personal.Health.Care.DesktopApp.Utills
         {
             if (!string.IsNullOrEmpty(value) && !string.IsNullOrWhiteSpace(value) && value.Length < MAX_LENTH)
             {
+                HashPassword(null);
                 return true;
             }
             return false;

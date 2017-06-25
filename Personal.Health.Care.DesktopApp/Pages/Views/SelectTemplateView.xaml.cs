@@ -26,7 +26,7 @@ namespace Personal.Health.Care.DesktopApp.Pages.Views
         public SelectTemplateView()
         {
             InitializeComponent();
-            this.DataContext = TemplatesViewModel.GetInstance();
+          
         }
 
         private void Close(object sender, RoutedEventArgs e)

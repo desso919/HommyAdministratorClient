@@ -7,12 +7,12 @@
                   xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
                   xmlns:local="clr-namespace:Personal.Health.Care.DesktopApp.ViewModels"
                   xmlns:utilities="clr-namespace:Personal.Health.Care.DesktopApp.Utills"
-                  MinHeight="380"
-                  MinWidth="420"
+                  MinHeight="350"
+                  MinWidth="480"
                   mc:Ignorable="d"
                   Title="Hommy" 
                   ResizeMode="NoResize"
-                  Style="{StaticResource BlankWindow}" Height="350" Width="450">
+                  Style="{StaticResource BlankWindow}" Height="360" Width="500">
 
 
     <Window.DataContext>
@@ -42,7 +42,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Application Name -->
-        <Label Grid.Row="0" Grid.ColumnSpan="3" Content="Hommy Addministrator " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+        <Label Grid.Row="0" Grid.ColumnSpan="3" Content="Hommy Administrator " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
                Width="482" FontStyle="Italic" FontSize="18" FontStretch="Condensed" FontWeight="Bold" Height="38"/>
         <!-- Application details -->
         <Label Grid.Row="0" Grid.ColumnSpan="3" Content="Hommy Administrator gives you an options for configuring your own rules and&#xD;&#xA;schedules for your devices. Please login to continue..." FontStyle="Oblique" 
@@ -62,7 +62,7 @@
 
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
             <Button Content="Log In" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Command="{Binding LoginCommand}" />
-            <Button Content="Register" Margin="75,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Click="Button_Click"/>
+            <!--<Button Content="Register" Margin="75,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Click="Button_Click"/> -->
         </StackPanel>
 
     </Grid>

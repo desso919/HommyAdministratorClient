@@ -22,7 +22,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <ListView Grid.Row="0" Grid.Column="0" SelectedItem="{Binding SelectedVisitation, Mode=TwoWay}" ItemsSource="{Binding AllRules}" HorizontalAlignment="Left" Width="700" >
+        <ListView Grid.Row="0" Grid.Column="0" SelectedItem="{Binding SelectedRule, Mode=TwoWay}" ItemsSource="{Binding AllRules}" HorizontalAlignment="Left" Width="700" >
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <Grid>
@@ -35,7 +35,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <Image Grid.Column="0" HorizontalAlignment="Left" Grid.RowSpan="2" Source="../../Images/Icons/rec.png" Height="32"/>
+                        <Image Grid.Column="0" HorizontalAlignment="Left" Grid.RowSpan="2" Source="../../Images/Icons/rule.png" Height="40"/>
 
                         <StackPanel HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
                             <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" FontWeight="Bold" />
@@ -45,6 +45,6 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Grid.Row="1" Grid.Column="0" IsEnabled="{Binding HasSelectedVisitation}" Content="Add to my visitations" Command="{Binding AddToVisitationCommand}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150"/>
+        <Button Grid.Row="1" Grid.Column="0" IsEnabled="{Binding HasSelectedRule}" Content="Delete Rule" Command="{Binding AddToVisitationCommand}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150"/>
     </Grid>
 </UserControl>

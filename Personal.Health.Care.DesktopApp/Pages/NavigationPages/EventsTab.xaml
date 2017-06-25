@@ -12,7 +12,7 @@
             <mui:ModernTab.Links>
                 <!-- TODO: set @Source -->
                 <mui:Link DisplayName="My Events" Source="/Pages/Views/EventsView.xaml"/>
-                <mui:Link DisplayName="Add New Event"  Source="Pages/Options/VisitationOptions/AddVisitationOption.xaml"/>
+                <mui:Link DisplayName="Add New Event"  Source="Pages/Options/TemplateOptions/AddEventOption.xaml"/>
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

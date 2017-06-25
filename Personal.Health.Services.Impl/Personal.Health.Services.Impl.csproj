@@ -34,8 +34,8 @@
       <HintPath>..\packages\JSON.1.0.1\lib\net40\Json.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,13 +57,10 @@
     </Compile>
     <Compile Include="ServiceImpl\EventService.cs" />
     <Compile Include="ServiceImpl\DeviceService.cs" />
-    <Compile Include="ServiceImpl\HospitalService.cs" />
     <Compile Include="ServiceImpl\RulesService.cs" />
     <Compile Include="ServiceImpl\ServicesUtils.cs" />
-    <Compile Include="ServiceImpl\TemplateServcie.cs" />
     <Compile Include="ServiceImpl\WebService.cs" />
     <Compile Include="ServiceImpl\UserService.cs" />
-    <Compile Include="ServiceImpl\VisitationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Personal.Health.Models\Personal.Health.Models.csproj">

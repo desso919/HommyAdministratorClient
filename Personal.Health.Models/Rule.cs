@@ -17,7 +17,7 @@ namespace Personal.Health.Models
             this.Name = Name;
         }
 
-        public Rule(int Id, String Name, User User, Event Event, Device Device)
+        public Rule(int Id, String Name, HommyUser User, Event Event, Device Device)
         {
             this.Id = Id;
             this.Name = Name;
@@ -35,7 +35,7 @@ namespace Personal.Health.Models
 
         public string Name { get; set; }
 
-        public User User { get; set; }
+        public HommyUser User { get; set; }
 
         public Event Event { get; set; }
 

@@ -39,7 +39,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public List<HospitalModel> Hospitals
         {
-            get { return MediatorClass.Hospitals; }
+            get { return null; }
         }
 
         public List<Doctor> Doctors
@@ -62,7 +62,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         }
         #endregion
 
-        #region Show Visitation for editing
+        #region Show Rule for editing
 
         private void LoadVisitation(ScheduledVisitation visitation)
         {
@@ -73,18 +73,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         private void SaveVisitation(object obj)
         {
-            bool isSuccessfullyEdited = false;
-
-            if (isSuccessfullyEdited)
-            {
-                MediatorClass.UpdatePatientVisitations();
-                EventsViewModel.GetInstance().update();
-                MessageBox.Show("Result", "Visitation Successfully Edited");
-            }
-            else
-            {
-                MessageBox.Show("Error", "Error whule trying to save your changes");
-            }
+           
         }
 
         #endregion

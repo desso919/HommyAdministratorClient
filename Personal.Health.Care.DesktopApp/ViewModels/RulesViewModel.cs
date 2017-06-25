@@ -26,7 +26,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         List<Rule> rules;
         private IRulesService service;
         private IEventService visitationService;
-        private RecommendedVisitation selectedVisitation;
+        private Rule selectedRule;
         private ICommand addToVisitationCommand;
         private Boolean isSelected;
 
@@ -52,11 +52,11 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public List<Rule> AllRules { get { return rules; } set { rules = value; NotifyPropertyChanged(); } }
 
-        public RecommendedVisitation SelectedVisitation { get { return selectedVisitation; } set { HasSelectedVisitation = true; selectedVisitation = value; NotifyPropertyChanged(); } }
+        public Rule SelectedRule { get { return selectedRule; } set { HasSelectedRule = true; selectedRule = value; NotifyPropertyChanged(); } }
 
         public ICommand AddToVisitationCommand { get { return addToVisitationCommand; } set { addToVisitationCommand = value; NotifyPropertyChanged(); } }
 
-        public Boolean HasSelectedVisitation { get { return isSelected; } set { isSelected = value; NotifyPropertyChanged(); } }
+        public Boolean HasSelectedRule { get { return isSelected; } set { isSelected = value; NotifyPropertyChanged(); } }
 
         #endregion
 
@@ -81,8 +81,8 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public void AddToMyVisitations(Object obj) {
 
-            MoveToVisitationView moveWindow = new MoveToVisitationView(SelectedVisitation);
-            moveWindow.ShowDialog();         
+            //MoveToVisitationView moveWindow = new MoveToVisitationView(SelectedVisitation);
+           // moveWindow.ShowDialog();         
         }
 
         #endregion

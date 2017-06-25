@@ -185,11 +185,8 @@ C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdminis
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\App.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\MainWindow.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\TemplatesTab.g.cs
-C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\HistoryOptions\AddHistoryPage.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\HistoryOptions\MyHistoryPage.g.cs
-C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\TemplateOptions\AddTemplateOption.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\TemplateOptions\ViewTemplatesPage.g.cs
-C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\VisitationOptions\AddVisitationOption.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\VisitationOptions\ScheduledVisitationsPage.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Settings\About.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Settings\Appearance.g.cs
@@ -214,10 +211,7 @@ C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdminis
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Personal.Health.Care.DesktopApp_MarkupCompile.cache
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Personal.Health.Care.DesktopApp_MarkupCompile.lref
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\MainWindow.baml
-C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\HistoryOptions\AddHistoryPage.baml
-C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\TemplateOptions\AddTemplateOption.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\TemplateOptions\ViewTemplatesPage.baml
-C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\VisitationOptions\AddVisitationOption.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Home.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Settings\PatientProfileView.baml
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\UserManagement\LoginView.baml
@@ -244,3 +238,9 @@ C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdminis
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\NavigationPages\EventsTab.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\EventsView.g.cs
 C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Views\EventsView.baml
+C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\VisitationOptions\AddRuleOptionView.g.cs
+C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\VisitationOptions\AddRuleOptionView.baml
+C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\TemplateOptions\AddEventOption.g.cs
+C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\TemplateOptions\AddEventOption.baml
+C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\HistoryOptions\AddDeviceOption.g.cs
+C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\Pages\Options\HistoryOptions\AddDeviceOption.baml

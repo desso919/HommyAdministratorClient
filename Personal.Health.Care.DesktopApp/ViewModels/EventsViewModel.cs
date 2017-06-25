@@ -27,10 +27,10 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         List<Event> events;
         private IEventService service;
         private IDeviceService historyService;
-        private ScheduledVisitation selectedVisitation;
+        private Event selectedEvent;
         private ICommand moveToHistoryCommand;
         private ICommand editVisitationCommand;
-        private Boolean hasSelectedTemplate;
+        private Boolean hasSelectedEvent;
         private string diagnose;
 
         #region Constructor
@@ -65,9 +65,9 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public ICommand EditVisitationCommand { get { return editVisitationCommand; } set { editVisitationCommand = value; NotifyPropertyChanged(); } }
 
-        public ScheduledVisitation SelectedVisitation { get { return selectedVisitation; } set { HasSelectedVisitation = true; selectedVisitation = value; NotifyPropertyChanged(); } }
+        public Event SelectedEvent { get { return selectedEvent; } set { HasSelectedEvent = true; selectedEvent = value; NotifyPropertyChanged(); } }
 
-        public Boolean HasSelectedVisitation { get { return hasSelectedTemplate; } set { hasSelectedTemplate = value; NotifyPropertyChanged(); } }
+        public Boolean HasSelectedEvent { get { return hasSelectedEvent; } set { hasSelectedEvent = value; NotifyPropertyChanged(); } }
 
         public string Diagnose { get { return diagnose; } set { diagnose = value; NotifyPropertyChanged(); } }
         #endregion
@@ -88,14 +88,14 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public void showDiagnoseDialog(object obj)
         {
-            AskDiagnoseView dialog = new AskDiagnoseView(SelectedVisitation);
-            dialog.ShowDialog();          
+            //AskDiagnoseView dialog = new AskDiagnoseView(SelectedVisitation);
+           // dialog.ShowDialog();          
         }
 
         private void EditVisitation(object obj)
         {
-            ModernDialog1 edit = new ModernDialog1(SelectedVisitation);
-            edit.ShowDialog();
+           // ModernDialog1 edit = new ModernDialog1(SelectedVisitation);
+            //edit.ShowDialog();
         }
 
         public async void Init()

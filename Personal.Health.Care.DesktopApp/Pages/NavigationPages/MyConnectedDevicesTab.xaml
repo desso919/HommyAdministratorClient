@@ -11,7 +11,7 @@
         <mui:ModernTab Layout="Tab" SelectedSource="/Pages/Views/MyDevicesView.xaml" >
             <mui:ModernTab.Links>
                 <mui:Link DisplayName="My Devices"  Source="/Pages/Views/MyDevicesView.xaml" />
-                <mui:Link DisplayName="Add new Device" Source="Pages/Options/HistoryOptions/AddHistoryPage.xaml"/>                
+                <mui:Link DisplayName="Add new Device" Source="Pages/Options/HistoryOptions/AddDeviceOption.xaml"/>                
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

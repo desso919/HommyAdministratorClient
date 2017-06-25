@@ -44,7 +44,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public List<HospitalModel> Hospitals
         {
-            get { return MediatorClass.Hospitals; }
+            get { return null; }
         }
 
         public List<Doctor> Doctors
@@ -78,30 +78,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public void AddHistoryRecord(object obj)
         {
 
-            if (Utills.Utill.isValidHistory(History))
-            {
-                History.Patient = LoggedInUser.GetLoggedInUser();
-                Boolean isAdded = false;
-                string message;
-
-                if (isAdded)
-                {
-                    MediatorClass.UpdatePatientHistory();
-                    //MyDevicesViewModel.GetInstance().update();
-                    message = "History Added Successfully";
-                }
-                else
-                {
-                    message = " Error while trying to add history! ";
-                }
-
-                System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke((Action)(() =>
-                {
-                    Messenger.ShowMessage("Result", message);
-                }));
-
-                History = new History();  
-            }
+            
         }
 
         #endregion

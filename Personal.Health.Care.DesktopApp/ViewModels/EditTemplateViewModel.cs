@@ -23,7 +23,6 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;                   
         private List<HospitalModel> hospitals;
         private ICommand saveCommand;
-        private ITemplateService service;
         private List<Doctor> doctors;
         private Template template;
 
@@ -31,8 +30,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public EditTemplateViewModel(Template template)
         {
-            saveCommand = new RelayCommand(SaveTemplate);
-            service =  NinjectConfig.Container.Get<ITemplateService>();
+            saveCommand = new RelayCommand(SaveTemplate);    
             MediatorClass.SaveTemplateCommand = SaveTemplateCommand;
             LoadTemplate(template);       
         }
@@ -45,7 +43,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public List<HospitalModel> Hospitals
         {
-            get { return MediatorClass.Hospitals; }
+            get { return null; }
         }
 
         public List<Doctor> Doctors
@@ -72,38 +70,12 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         private void LoadTemplate(Template template)
         {
-            if (template != null)
-            {
-                Template = template.Clone();
-                Template.Doctor = Doctors.Find(doctor => doctor.DoctorId == template.DoctorId);
-                Template.Hospital = Hospitals.Find(hospital => hospital.HospitalId == template.HospitalId);
-            }        
+            
         }
 
         private void SaveTemplate(object obj)
         {
-            if (Utills.Utill.isValidTemplate(Template))
-            {
-                Template.Patient = LoggedInUser.GetLoggedInUser();
-                bool isSuccessfullyEdited = service.EditTemplate(Template);
-                string message;
 
-                if (isSuccessfullyEdited)
-                {
-                    MediatorClass.UpdatePatientTemplates();
-                    TemplatesViewModel.GetInstance().update();
-                    message = "Template Successfully Edited";
-                }
-                else
-                {
-                    message = "Error while trying to save your changes";
-                }
-
-                System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke((Action)(() =>
-                {
-                    Messenger.ShowMessage("Result", message);
-                }));
-            } 
         }
 
         #endregion

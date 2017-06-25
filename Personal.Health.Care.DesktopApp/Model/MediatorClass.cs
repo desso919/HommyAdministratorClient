@@ -30,9 +30,21 @@ namespace Personal.Health.Care.DesktopApp.Model
         private static List<ScheduledVisitation> visitations;
         private static List<History> history;
         private static List<Template> templates;
-        private static List<HospitalModel> hospitals;
+       
         private static List<Doctor> doctors;
         private static List<RecommendedVisitation> recommendedVisitation;
+
+
+
+        // ---------------------------------------------------------------------------------
+
+        private static List<Event> events;
+
+        public static List<Event> Evetns { get { return events; } set { events = value; } }
+
+
+        // ---------------------------------------------------------------------------------
+
 
         public static MediatorClass instance = new MediatorClass();
         public static string diagnose;
@@ -62,46 +74,10 @@ namespace Personal.Health.Care.DesktopApp.Model
         public static List<Template> Templates { get { return templates; } set { templates = value; } }
         public static List<RecommendedVisitation> RecommendedVisitation { get { return recommendedVisitation; } set { recommendedVisitation = value; } }
 
-        public static List<HospitalModel> Hospitals { get { return hospitals; } set { hospitals = value; } }
+ 
         public static List<Doctor> Doctors { get { return doctors; } set { doctors = value; } }
 
-        public static void Init()
-        {
-            long thisPatientId = LoggedInUser.GetLoggedInUser().Id;
-
-            hospitals = NinjectConfig.Container.Get<IHospitalService>().GetAllHispitals();
-            //doctors = NinjectConfig.Container.Get<IEventService>().GetAllDoctors();
-            //recommendedVisitation = NinjectConfig.Container.Get<IRecommendedVisitationService>().GetRecommendedVisitationForPatient(Utills.Utill.GetAge(LoggedInUser.GetLoggedInUser()));
-        }
-
-        public static void UpdatePatientTemplates()
-        {
-            templates = NinjectConfig.Container.Get<ITemplateService>().GetAllPatientTemplates(LoggedInUser.GetLoggedInUser().Id);
-        }
-
-        public static void UpdatePatientVisitations()
-        {
-           // visitations = NinjectConfig.Container.Get<IEventService>().GetAllScheduledVisitationsForThisPatient(LoggedInUser.GetLoggedInUser().Id);
-            sortVisitations();
-        }
-
-        public static void UpdatePatientHistory()
-        {
-            //history = NinjectConfig.Container.Get<IDeviceService>().GetAllHistoryForThisPatient(LoggedInUser.GetLoggedInUser().Id);
-            sortHistory();
-        }
-
-        private static void sortVisitations() 
-        {
-            Comparison<ScheduledVisitation> comparator = new Comparison<ScheduledVisitation>((x,y)=>x.Date.CompareTo(y.Date));
-            Visitations.Sort(comparator);
-        }
-
-        private static void sortHistory()
-        {
-            Comparison<History> comparator = new Comparison<History>((x, y) => x.Date.CompareTo(y.Date));
-            Histories.Sort(comparator);
-        }
+    
         #endregion
 
         #region INotifyPropertyChanged

@@ -1,10 +1,10 @@
 ﻿C:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\obj\Debug\GeneratedInternalTypeHelper.g.i.cs
 
 FC:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\MainWindow.xaml;;
-FC:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\Pages\Options\HistoryOptions\AddHistoryPage.xaml;;
-FC:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\Pages\Options\TemplateOptions\AddTemplateOption.xaml;;
+FC:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\Pages\Options\HistoryOptions\AddDeviceOption.xaml;;
+FC:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\Pages\Options\TemplateOptions\AddEventOption.xaml;;
 FC:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\Pages\Options\TemplateOptions\ViewTemplatesPage.xaml;;
-FC:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\Pages\Options\VisitationOptions\AddVisitationOption.xaml;;
+FC:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\Pages\Options\VisitationOptions\AddRuleOptionView.xaml;;
 FC:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\Pages\Home.xaml;;
 FC:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\Pages\Settings\PatientProfileView.xaml;;
 FC:\Users\Десислав\Documents\GitHub\HommyAdministratorClient\HommyAdministratorClient\Personal.Health.Care.DesktopApp\Pages\UserManagement\LoginView.xaml;;

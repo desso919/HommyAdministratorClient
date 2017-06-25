@@ -38,32 +38,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         private void MoveToHistory(object obj)
         {
-            if (!string.IsNullOrEmpty(Diagnose) && !string.IsNullOrWhiteSpace(Diagnose))
-            {
-                Diagnose = Diagnose;
-                string message;
-
-                Boolean isAdded = false;
-
-                if (isAdded)
-                {
-                    MediatorClass.UpdatePatientVisitations();
-                    MediatorClass.UpdatePatientHistory();
-
-                    EventsViewModel.GetInstance().update();
-                   // MyDevicesViewModel.GetInstance().update();
-                    message = "Moved Successfully";
-                }
-                else
-                {
-                    message = "Error while trying to moved the selected visitation";
-                }
-
-                System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke((Action)(() =>
-                {
-                    Messenger.ShowMessage("Result", message);
-                }));
-            }
+           
 
         }
 

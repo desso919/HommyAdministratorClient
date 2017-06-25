@@ -29,8 +29,8 @@
         <Label Grid.Row="0" Grid.Column="0" Content="Username" Foreground="Blue" FontStyle="Oblique" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="120"/>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding User.Username}" Style="{StaticResource Heading2}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-        <Label Grid.Row="1" Grid.Column="0" Content="Password" Foreground="Blue" FontStyle="Oblique" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="120"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding User.Password}" Style="{StaticResource Heading2}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Label Grid.Row="1" Grid.Column="0" Content="Account Type" Foreground="Blue" FontStyle="Oblique" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="120"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Administrator" Style="{StaticResource Heading2}" HorizontalAlignment="Left" VerticalAlignment="Center" />
 
         <Label Grid.Row="2" Grid.Column="0" Content="Email" Foreground="Blue" HorizontalAlignment="Left" FontStyle="Oblique"   VerticalAlignment="Center" Width="120"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding User.Email}" Style="{StaticResource Heading2}" HorizontalAlignment="Left"  VerticalAlignment="Center"/>

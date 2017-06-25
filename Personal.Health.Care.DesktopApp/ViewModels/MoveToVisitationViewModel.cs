@@ -40,7 +40,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public List<HospitalModel> Hospitals
         {
-            get { return MediatorClass.Hospitals; }
+            get { return null; }
         }
 
         public List<Doctor> Doctors
@@ -73,33 +73,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         private void MoveToVisitation(object obj)
         {
-            bool isAdded = false;
-            string message;
-
-            if (Utills.Utill.isValidRecVisitation(NewVisitation))
-            {
-                if (NewVisitation != null)
-                {
-                    NewVisitation.Patient = LoggedInUser.GetLoggedInUser();
-                    isAdded = false;
-                }
-
-                if (isAdded)
-                {
-                    MediatorClass.UpdatePatientVisitations();
-                    EventsViewModel.GetInstance().update();
-                    message = "Added Successfully";
-                }
-                else
-                {
-                    message = "Error while trying to add visitation";
-                }
-
-                System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke((Action)(() =>
-                {
-                    Messenger.ShowMessage("Result", message);
-                }));
-            }   
+            
         }
 
         #endregion

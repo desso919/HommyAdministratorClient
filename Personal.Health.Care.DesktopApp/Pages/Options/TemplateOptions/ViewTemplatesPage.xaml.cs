@@ -24,7 +24,6 @@ namespace Personal.Health.Care.DesktopApp.Pages.Options.TemplateOptions
         public ViewTemplatesPage()
         {
             InitializeComponent();
-            this.DataContext = TemplatesViewModel.GetInstance();
         }
     }
 }

@@ -25,8 +25,8 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         private List<Device> devices;
         private IDeviceService service;
         private ICommand viewHistoryCommand;
-        private History selectedHistory;
-        private Boolean hasSelectedTemplate;
+        private Device selectedDevice;
+        private Boolean hasSelectedDevice;
 
 
         #region Constructor
@@ -48,8 +48,8 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         private void ViewSelectedHistory(object obj)
         {
-            ViewHistory viewHistory = new ViewHistory(SelectedHistory);
-            viewHistory.ShowDialog();
+           // ViewHistory viewHistory = new ViewHistory(SelectedHistory);
+            //viewHistory.ShowDialog();
         }
 
 
@@ -67,11 +67,11 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public List<Device> AllDevices { get { return devices; } set { devices = value; NotifyPropertyChanged(); } }
 
-        public History SelectedHistory { get { return selectedHistory; } set { HasSelectedVisitation = true; selectedHistory = value; NotifyPropertyChanged(); } }
+        public Device SelectedDevice { get { return selectedDevice; } set { HasSelectedDevice = true; selectedDevice = value; NotifyPropertyChanged(); } }
 
         public ICommand ViewHistoryCommand { get { return viewHistoryCommand; } set { viewHistoryCommand = value; NotifyPropertyChanged(); }}
 
-        public Boolean HasSelectedVisitation { get { return hasSelectedTemplate; } set { hasSelectedTemplate = value; NotifyPropertyChanged(); } }
+        public Boolean HasSelectedDevice { get { return hasSelectedDevice; } set { hasSelectedDevice = value; NotifyPropertyChanged(); } }
 
         #endregion
 

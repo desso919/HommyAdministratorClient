@@ -87,45 +87,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         #region Register User Code
 
         public void RegisterPatient(object obj)
-        {
-            Boolean isAdded = false;
-
-            if (Utills.Utill.isValidPatient(Patient))
-            {
-                Patient.Password = SecurityUtil.HashPassword(Password);
-                Patient.Age = Utills.Utill.GetAge(Patient.BirhtDate);
-                isAdded = false;
-
-                if (isAdded)
-                {
-                    if (Patient != null)
-                    {
-                        var loginWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-                        if (loginWindow != null)
-                        {
-                           // LoggedInUser.Init(User);
-                            MediatorClass.Init();
-                            MainWindow mainWindow = new MainWindow();
-                            mainWindow.Show();
-                            loginWindow.Close();
-                        }
-                        else
-                        {
-                            System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke((Action)(() =>
-                            {
-                                Messenger.ShowMessage("Something went wrong. Please try again.");
-                            }));
-                        }
-                    }
-                }
-                else
-                {
-                    System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke((Action)(() =>
-                    {
-                        Messenger.ShowMessage("Error while trying to register you");
-                    }));
-                }
-            }                  
+        {                 
         }
 
         #endregion

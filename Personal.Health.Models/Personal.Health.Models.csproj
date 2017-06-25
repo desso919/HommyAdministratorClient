@@ -49,8 +49,10 @@
     <Compile Include="History.cs" />
     <Compile Include="HommyUser.cs" />
     <Compile Include="HospitalModel.cs" />
+    <Compile Include="OperationResult.cs" />
     <Compile Include="Rule.cs" />
     <Compile Include="RulesCollection.cs" />
+    <Compile Include="HommyEventTrigger.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecommendedVisitation.cs" />
