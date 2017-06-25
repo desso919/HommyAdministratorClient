@@ -23,11 +23,11 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
     public class RulesViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        List<Rule> rules;
+        private static RulesViewModel instance;
+        private List<Rule> rules;
         private IRulesService service;
         private IEventService visitationService;
         private Rule selectedRule;
-        private ICommand addToVisitationCommand;
         private Boolean isSelected;
 
         #region Constructor
@@ -36,16 +36,18 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         {
             service = NinjectConfig.Container.Get<IRulesService>();
             visitationService = NinjectConfig.Container.Get<IEventService>();
-            addToVisitationCommand = new RelayCommand(AddToMyVisitations);
-            Init();
+            LoadRules();
         }
 
-        private async void Init()
+        public static RulesViewModel GetInstance()
         {
-            string response = await service.getRulesNameForUser(1);
-            RulesCollection ReturnedRules = JsonConvert.DeserializeObject<RulesCollection>(response);
-            AllRules = ReturnedRules.Rules;
+            if (instance == null)
+            {
+                instance = new RulesViewModel();
+            }
+            return instance;
         }
+    
         #endregion
 
         #region Properties
@@ -53,8 +55,6 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public List<Rule> AllRules { get { return rules; } set { rules = value; NotifyPropertyChanged(); } }
 
         public Rule SelectedRule { get { return selectedRule; } set { HasSelectedRule = true; selectedRule = value; NotifyPropertyChanged(); } }
-
-        public ICommand AddToVisitationCommand { get { return addToVisitationCommand; } set { addToVisitationCommand = value; NotifyPropertyChanged(); } }
 
         public Boolean HasSelectedRule { get { return isSelected; } set { isSelected = value; NotifyPropertyChanged(); } }
 
@@ -71,18 +71,13 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         }
         #endregion
 
+        #region Load Rules Code
 
-        #region Show Recommended AllEvents Code
-
-        public void update()
+        public async void LoadRules()
         {
-            //AllRules = MediatorClass.RecommendedVisitation;
-        }
-
-        public void AddToMyVisitations(Object obj) {
-
-            //MoveToVisitationView moveWindow = new MoveToVisitationView(SelectedVisitation);
-           // moveWindow.ShowDialog();         
+            string response = await service.getRulesNameForUser(1);
+            RulesCollection ReturnedRules = JsonConvert.DeserializeObject<RulesCollection>(response);
+            AllRules = ReturnedRules.Rules;
         }
 
         #endregion

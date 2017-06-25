@@ -51,6 +51,7 @@
     <Compile Include="HospitalModel.cs" />
     <Compile Include="OperationResult.cs" />
     <Compile Include="Rule.cs" />
+    <Compile Include="RuleDao.cs" />
     <Compile Include="RulesCollection.cs" />
     <Compile Include="HommyEventTrigger.cs" />
     <Compile Include="User.cs" />

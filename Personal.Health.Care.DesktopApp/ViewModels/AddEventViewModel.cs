@@ -24,6 +24,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         private List<HommyEventTrigger> triggers;
         private ICommand addEventCommand;
         private Event eventObject;
+        private HommyEventTrigger triger; 
         private IEventService service;
 
         public AddEventViewModel()
@@ -46,15 +47,16 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             set { eventObject = value; NotifyPropertyChanged(); } 
         }
 
+        public HommyEventTrigger Trigger
+        {
+            get { return triger; }
+            set { triger = value; }
+        }
+
         public List<HommyEventTrigger> Triggers
         {
             get { return triggers; }
             set { triggers = value; }
-        }
-
-        public List<Doctor> Doctors
-        {
-            get { return MediatorClass.Doctors; }
         }
 
         public ICommand AddEventCommand
@@ -83,12 +85,19 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public void AddEvent(Object obj)
         {
             Event newEvent = new Event();
-            newEvent.Name = eventObject.Name;
-            newEvent.Description = eventObject.Description;
-            newEvent.TriggeredBy = eventObject.TriggeredBy;
+            newEvent.name = eventObject.name;
+            newEvent.description = eventObject.description;
+            newEvent.triggeredBy = Trigger.Name;
 
-            eventObject = new Event();
+            EventObject = new Event();
+            Trigger = new HommyEventTrigger();
             service.addNewEvent(newEvent);
+
+            EventsViewModel.GetInstance().LoadEvents();
+            System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke((Action)(() =>
+            {
+                Messenger.ShowMessage("Result", "Event created successfully");
+            }));
         }
 
         #endregion

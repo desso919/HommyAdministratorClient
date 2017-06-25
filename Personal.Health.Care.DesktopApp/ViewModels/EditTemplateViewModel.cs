@@ -31,7 +31,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public EditTemplateViewModel(Template template)
         {
             saveCommand = new RelayCommand(SaveTemplate);    
-            MediatorClass.SaveTemplateCommand = SaveTemplateCommand;
+           // MediatorClass.SaveTemplateCommand = SaveTemplateCommand;
             LoadTemplate(template);       
         }
 
@@ -44,11 +44,6 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public List<HospitalModel> Hospitals
         {
             get { return null; }
-        }
-
-        public List<Doctor> Doctors
-        {
-            get { return MediatorClass.Doctors; }
         }
 
         public ICommand SaveTemplateCommand { get { return saveCommand; } set { saveCommand = value; NotifyPropertyChanged(); } }

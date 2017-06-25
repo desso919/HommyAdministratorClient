@@ -47,8 +47,6 @@ namespace Personal.Health.Services.Impl
             }
 
             OperationResult OperationResult = JsonConvert.DeserializeObject<OperationResult>(result);
-
-            
         }
     }
 }

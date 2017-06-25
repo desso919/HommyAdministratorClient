@@ -35,10 +35,10 @@
                         <Image Grid.Column="0" HorizontalAlignment="Left" Grid.RowSpan="2" Source="../../Images/Icons/scheduled.png" Height="32"/>
 
                         <StackPanel HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
-                            <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" FontWeight="Bold" />
+                            <TextBlock HorizontalAlignment="Left" Text="{Binding name}" FontWeight="Bold" />
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                            <TextBlock Text="{Binding Description}" Foreground="Blue" />
+                            <TextBlock Text="{Binding description}" Foreground="Blue" />
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

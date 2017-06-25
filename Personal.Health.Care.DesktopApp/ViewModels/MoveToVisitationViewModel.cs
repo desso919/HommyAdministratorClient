@@ -29,7 +29,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         {
             NewVisitation = new ScheduledVisitation();
             moveCommand = new RelayCommand(MoveToVisitation);
-            MediatorClass.MoveToVisitationCommand = SaveCommand;
+           // MediatorClass.MoveToVisitationCommand = SaveCommand;
             NewVisitation.Reason = recommendedVisitation.Reason;
             NewVisitation.Description = recommendedVisitation.Description;
         }
@@ -41,11 +41,6 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public List<HospitalModel> Hospitals
         {
             get { return null; }
-        }
-
-        public List<Doctor> Doctors
-        {
-            get { return MediatorClass.Doctors; }
         }
 
         public ScheduledVisitation NewVisitation

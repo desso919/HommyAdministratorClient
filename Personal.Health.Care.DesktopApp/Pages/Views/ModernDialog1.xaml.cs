@@ -39,7 +39,7 @@ namespace Personal.Health.Care.DesktopApp.Pages.Views
             // define the dialog buttons
             this.Buttons = new Button[] { this.OkButton, this.CancelButton };            
             this.DataContext = new EditVisitationViewModel(visitation);
-            this.OkButton.Command = MediatorClass.SaveCommand;            
+           // this.OkButton.Command = MediatorClass.SaveCommand;            
         }
     }
 }

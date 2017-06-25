@@ -20,5 +20,14 @@ namespace Personal.Health.Services.Impl
             var response = await http.SendAsync(myRequest);
             return await response.Content.ReadAsStringAsync();
         }
+
+
+        public async Task<string> GetDeviceBYName(String name)
+        {
+            HttpClient http = new HttpClient();
+            var myRequest = new HttpRequestMessage(HttpMethod.Get, WebService.URIAddress + "devices/device?name=" + name);
+            var response = await http.SendAsync(myRequest);
+            return await response.Content.ReadAsStringAsync();
+        }
     }
 }

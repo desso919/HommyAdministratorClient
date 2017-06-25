@@ -10,5 +10,7 @@ namespace Personal.Health.Services.ServiceInterfaces
     public interface IRulesService
     {
         Task<string> getRulesNameForUser(int userId);
+
+        Task addNewRule(RuleDao rule);
     }
 }

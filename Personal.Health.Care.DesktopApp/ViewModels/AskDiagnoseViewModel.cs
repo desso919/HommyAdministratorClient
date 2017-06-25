@@ -25,7 +25,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public AskDiagnoseViewModel(ScheduledVisitation visit)
         {
             okCommand = new RelayCommand(MoveToHistory);
-            MediatorClass.OKCommand = okCommand;
+           // MediatorClass.OKCommand = okCommand;
             visitation = visit;
         }
 

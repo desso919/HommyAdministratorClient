@@ -47,10 +47,6 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             get { return null; }
         }
 
-        public List<Doctor> Doctors
-        {
-            get { return MediatorClass.Doctors; }
-        }
 
         public ICommand AddHistoryCommand
         {

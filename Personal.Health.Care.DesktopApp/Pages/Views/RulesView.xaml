@@ -39,7 +39,10 @@
 
                         <StackPanel HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
                             <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" FontWeight="Bold" />
-                        </StackPanel>      
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                            <TextBlock Text="{Binding Event.name}" Foreground="Blue" />
+                        </StackPanel>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

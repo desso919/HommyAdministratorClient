@@ -14,6 +14,10 @@ namespace Personal.Health.Models
             Name = name;
         }
 
+        public HommyEventTrigger()
+        {
+        }
+
         public string Name { get; set; }
     }
 }

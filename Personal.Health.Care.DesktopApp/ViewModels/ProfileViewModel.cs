@@ -62,12 +62,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             if (mainWindows != null)
             {
                 LoggedInUser.LogoutUser();
-                MediatorClass.Evetns = null;
-                MediatorClass.Doctors = null;
-                MediatorClass.Histories = null;
-                MediatorClass.Visitations = null;
-                MediatorClass.RecommendedVisitation = null;
-                MediatorClass.Templates = null;
+                MediatorClass.Events = null;
                 LoginView loginPage = new LoginView();               
                 mainWindows.Close();
             }

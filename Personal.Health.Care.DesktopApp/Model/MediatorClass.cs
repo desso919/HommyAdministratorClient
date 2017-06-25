@@ -19,35 +19,14 @@ namespace Personal.Health.Care.DesktopApp.Model
     public class MediatorClass : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private static ScheduledVisitation visitation = new ScheduledVisitation();
-        private static Task<List<HospitalModel>> taskHospitals;       
-        private static ICommand saveCommand;
-        private static ICommand okCommand;
-        private static ICommand saveTemplateCommand;
-        private static ICommand moveToVisitationCommand;
-        private static Template template;
-
-        private static List<ScheduledVisitation> visitations;
-        private static List<History> history;
-        private static List<Template> templates;
-       
-        private static List<Doctor> doctors;
-        private static List<RecommendedVisitation> recommendedVisitation;
-
-
-
-        // ---------------------------------------------------------------------------------
-
-        private static List<Event> events;
-
-        public static List<Event> Evetns { get { return events; } set { events = value; } }
-
-
-        // ---------------------------------------------------------------------------------
-
-
         public static MediatorClass instance = new MediatorClass();
-        public static string diagnose;
+        private static List<Event> events = new List<Event>();
+        private static List<Rule> rules = new List<Rule>();
+
+        public static List<Event> Events { get { return events; } set { events = value; } }
+
+        public static List<Rule> Rules { get { return rules; } set { rules = value; } }
+
 
         public static MediatorClass GetInstance() {
             if (instance == null)
@@ -56,29 +35,6 @@ namespace Personal.Health.Care.DesktopApp.Model
             }
             return instance;
         }
-
-        public static Template SelectedTemplate { get { return template; } set { template = value; } }
-
-
-
-
-        #region in use
-        public static ScheduledVisitation SelectedVisitation { get { return visitation; } set { visitation = value; } }
-
-        public static ICommand SaveCommand { get { return saveCommand; } set { saveCommand = value; } }
-        public static ICommand OKCommand { get { return okCommand; } set { okCommand = value; } }
-        public static ICommand MoveToVisitationCommand { get { return moveToVisitationCommand; } set { moveToVisitationCommand = value; } }
-        public static ICommand SaveTemplateCommand { get { return saveTemplateCommand; } set { saveTemplateCommand = value; } }
-        public static List<ScheduledVisitation> Visitations { get { return visitations; } set { visitations = value; } }
-        public static List<History> Histories { get { return history; } set { history = value; } }
-        public static List<Template> Templates { get { return templates; } set { templates = value; } }
-        public static List<RecommendedVisitation> RecommendedVisitation { get { return recommendedVisitation; } set { recommendedVisitation = value; } }
-
- 
-        public static List<Doctor> Doctors { get { return doctors; } set { doctors = value; } }
-
-    
-        #endregion
 
         #region INotifyPropertyChanged
         private void NotifyPropertyChanged([CallerMemberName] string propName = "")
@@ -90,8 +46,5 @@ namespace Personal.Health.Care.DesktopApp.Model
             }
         }
         #endregion
-
-      
-
     }
 }

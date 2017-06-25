@@ -27,7 +27,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public EditVisitationViewModel(ScheduledVisitation visitation)
         {
             saveCommand = new RelayCommand(SaveVisitation);
-            MediatorClass.SaveCommand = SaveCommand;
+            //MediatorClass.SaveCommand = SaveCommand;
             LoadVisitation(visitation);
         }
 
@@ -40,11 +40,6 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         public List<HospitalModel> Hospitals
         {
             get { return null; }
-        }
-
-        public List<Doctor> Doctors
-        {
-            get { return MediatorClass.Doctors; }
         }
 
         public ICommand SaveCommand { get { return saveCommand; } set { saveCommand = value; NotifyPropertyChanged(); } }
@@ -67,7 +62,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         private void LoadVisitation(ScheduledVisitation visitation)
         {
             Visitation = visitation.Clone();
-            Visitation.Doctor = Doctors.Find(doctor => doctor.DoctorId == visitation.DoctorId);
+           // Visitation.Doctor = Doctors.Find(doctor => doctor.DoctorId == visitation.DoctorId);
             Visitation.Hospital = Hospitals.Find(hospital => hospital.HospitalId == visitation.HospitalId);
         }
 

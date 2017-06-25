@@ -22,7 +22,7 @@ namespace Personal.Health.Services.Impl.ServiceImpl
             return await response.Content.ReadAsStringAsync();
         }
 
-        public async Task addNewRule(Rule rule)
+        public async Task addNewRule(RuleDao rule)
         {
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(WebService.URIAddress + "rules/add");
             httpWebRequest.ContentType = "application/json";

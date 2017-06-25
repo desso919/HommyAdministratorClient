@@ -10,18 +10,18 @@ namespace Personal.Health.Models
     {
         public Event() { }
 
-        public Event(String Name)
+        public Event(String eventName)
         {
-            this.Name = Name;
+            this.name = eventName;
         }
 
-        public int Id { get; set; }
+        public int id { get; set; }
 
-        public string Name { get; set; }
+        public string name { get; set; }
 
-        public string Description { get; set; }
+        public string description { get; set; }
 
-        public string TriggeredBy { get; set; }
+        public string triggeredBy { get; set; }
         
 
     }

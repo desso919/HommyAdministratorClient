@@ -29,11 +29,11 @@
         <TextBlock Grid.Row="0" Grid.Column="1" Text="CREATE NEW EVENT" Style="{StaticResource Heading2}" />
 
         <Label Grid.Row="1" Grid.Column="0" Content="Event Name:" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding EventObject.Name, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding EventObject.name, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300"/>
 
         
         <Label Grid.Row="2" Grid.Column="0" Content="Triggered By:" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120"/>
-        <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Triggers}" SelectedItem="{Binding EventObject.TriggeredBy}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300">
+        <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Triggers}" SelectedItem="{Binding Trigger}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300">
             <ComboBox.ItemTemplate>                
                 <DataTemplate>
                     <TextBlock Text="{Binding Path=Name}" />
@@ -54,7 +54,7 @@
         <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Template.Reason, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300"/>
 -->
         <Label Grid.Row="3" Grid.Column="0" Content="Description:" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding EventObject.Description, Mode=TwoWay}" Height="50" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Width="537"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding EventObject.description, Mode=TwoWay}" Height="50" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Width="537"/>
 
         <Button Grid.Row="4" Grid.Column="1" Content="Add Event" Command="{Binding AddEventCommand}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120"/>
 

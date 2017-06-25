@@ -24,26 +24,17 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private static EventsViewModel instance;
-        List<Event> events;
+        private List<Event> events;
         private IEventService service;
-        private IDeviceService historyService;
         private Event selectedEvent;
-        private ICommand moveToHistoryCommand;
-        private ICommand editVisitationCommand;
         private Boolean hasSelectedEvent;
-        private string diagnose;
 
         #region Constructor
 
         private EventsViewModel()
         {
             service = NinjectConfig.Container.Get<IEventService>();
-            historyService = NinjectConfig.Container.Get<IDeviceService>();
-            moveToHistoryCommand = new RelayCommand(showDiagnoseDialog);
-            editVisitationCommand = new RelayCommand(EditVisitation);
-   
-            Init();
-            update();
+            LoadEvents();
         }
 
         public static EventsViewModel GetInstance()
@@ -61,15 +52,11 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public List<Event> AllEvents { get { return events; } set { events = value; NotifyPropertyChanged(); } } 
 
-        public ICommand MoveToHistoryCommand { get { return moveToHistoryCommand; } set { moveToHistoryCommand = value; NotifyPropertyChanged(); } }
-
-        public ICommand EditVisitationCommand { get { return editVisitationCommand; } set { editVisitationCommand = value; NotifyPropertyChanged(); } }
-
         public Event SelectedEvent { get { return selectedEvent; } set { HasSelectedEvent = true; selectedEvent = value; NotifyPropertyChanged(); } }
 
         public Boolean HasSelectedEvent { get { return hasSelectedEvent; } set { hasSelectedEvent = value; NotifyPropertyChanged(); } }
 
-        public string Diagnose { get { return diagnose; } set { diagnose = value; NotifyPropertyChanged(); } }
+        
         #endregion
 
         #region INotifyPropertyChanged
@@ -83,37 +70,11 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         }
         #endregion
 
-
-        #region Move to history Code
-
-        public void showDiagnoseDialog(object obj)
-        {
-            //AskDiagnoseView dialog = new AskDiagnoseView(SelectedVisitation);
-           // dialog.ShowDialog();          
-        }
-
-        private void EditVisitation(object obj)
-        {
-           // ModernDialog1 edit = new ModernDialog1(SelectedVisitation);
-            //edit.ShowDialog();
-        }
-
-        public async void Init()
+        public async void LoadEvents()
         {
             string response = await service.GetAllEvents();
             EventsCollection devices = JsonConvert.DeserializeObject<EventsCollection>(response);
             AllEvents = devices.Events;      
         }
-
-        public void update()
-        {
-           // AllEvents = MediatorClass.AllEvents;
-        }
-
-        #endregion
-
-
-
-
     }
 }

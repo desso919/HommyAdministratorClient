@@ -16,7 +16,7 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
         {
             if(history != null) {
 
-                history.Doctor = MediatorClass.Doctors.Find(doctor => doctor.DoctorId == history.DoctorId);
+               // history.Doctor = MediatorClass.Doctors.Find(doctor => doctor.DoctorId == history.DoctorId);
                 //history.Hospital = MediatorClass.Evetns.Find(hospital => hospital.HospitalId == history.HospitalId);
                 History = history;
             }

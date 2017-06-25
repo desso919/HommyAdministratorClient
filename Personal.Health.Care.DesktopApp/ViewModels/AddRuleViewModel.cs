@@ -24,14 +24,18 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private ICommand addRuleCommand;
-        private IRulesService service;
+        private IRulesService RuleService;
+        private IDeviceService DeviceService;
 
         private static List<Event> events = new List<Event>();
+        private static List<Device> devices = new List<Device>();
+        private static DeviceAction selectedDeviceActions = new DeviceAction();
         private Rule rule = new Rule();
 
         public AddRuleViewModel()
         {
-            service = NinjectConfig.Container.Get<IRulesService>();
+            RuleService = NinjectConfig.Container.Get<IRulesService>();
+            DeviceService = NinjectConfig.Container.Get<IDeviceService>();
             addRuleCommand = new RelayCommand(AddRule);
             Init();
         }
@@ -42,12 +46,9 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             EventsCollection allEvents = JsonConvert.DeserializeObject<EventsCollection>(response);
             AllEvents = allEvents.Events;
 
-            Event e = new Event();
-            e.Name = "TURN OFF TV";
-            e.Description = "This events is triggered when I turn off the TV.";
-
-            //await NinjectConfig.Container.Get<IEventService>().addNewEvent(e);
-
+            string allDevicesFromServer = await NinjectConfig.Container.Get<IDeviceService>().GetAllDevices();
+            DevicesCollection allDevices = JsonConvert.DeserializeObject<DevicesCollection>(allDevicesFromServer);
+            AllDevices = allDevices.Devices;
         }
 
         #region Properties
@@ -58,10 +59,22 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
             set { rule = value; NotifyPropertyChanged(); }
         }
 
-        public List<Event> AllEvents 
-        { 
-            get { return events; } 
-            set { events = value; NotifyPropertyChanged(); } 
+        public List<Event> AllEvents
+        {
+            get { return events; }
+            set { events = value; NotifyPropertyChanged(); }
+        }
+
+        public DeviceAction SelectedDeviceActions
+        {
+            get { return selectedDeviceActions; }
+            set { selectedDeviceActions = value; NotifyPropertyChanged(); }
+        }
+
+        public List<Device> AllDevices
+        {
+            get { return devices; }
+            set { devices = value; NotifyPropertyChanged(); }
         }
 
 
@@ -90,32 +103,25 @@ namespace Personal.Health.Care.DesktopApp.ViewModels
 
         public void AddRule(Object obj)
         {
+            RuleDao simpleRule = new RuleDao();
+            simpleRule.userId = LoggedInUser.GetLoggedInUser().Id;
+            simpleRule.eventId = Rule.Event.id;
+            simpleRule.deviceId = Rule.Device.Id;
+            simpleRule.actionId = SelectedDeviceActions.Id;
+            simpleRule.ruleName = Rule.Name;
 
-
-            if (false)
+            if (simpleRule != null)
             {
-                Rule.User= LoggedInUser.GetLoggedInUser();
-                Boolean isAdded = false;
-                string message;
-
-                if (isAdded)
-                {
-                 
-                    EventsViewModel.GetInstance().update();
-                    message = "Add Visitation Successfully";
-                    Rule = new Rule();
-                }
-                else
-                {
-                    message = "Error while trying to add visitation";
-                }
-
+                RuleService.addNewRule(simpleRule);
+                Rule = new Rule();
+                RulesViewModel.GetInstance().LoadRules();
                 System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke((Action)(() =>
                 {
-                    Messenger.ShowMessage("Result", message);
+                    Messenger.ShowMessage("Result", "Rule created successfully");
                 }));
             }
         }
+
         #endregion
     }
 }

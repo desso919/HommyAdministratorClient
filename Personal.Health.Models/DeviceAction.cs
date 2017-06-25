@@ -12,11 +12,11 @@ namespace Personal.Health.Models
 
          public DeviceAction(String ActionName)
         {
-            this.ActionName = ActionName;
+            this.action = ActionName;
         }
 
         public int Id { get; set; }
 
-        public string ActionName { get; set; }
+        public string action { get; set; }
     }
 }

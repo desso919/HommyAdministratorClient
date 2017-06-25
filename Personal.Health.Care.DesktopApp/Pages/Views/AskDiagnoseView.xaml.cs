@@ -30,7 +30,7 @@ namespace Personal.Health.Care.DesktopApp.Pages.Views
 
             // define the dialog buttons
             this.Buttons = new Button[] { this.OkButton, this.CancelButton };
-            this.OkButton.Command = MediatorClass.OKCommand;
+           // this.OkButton.Command = MediatorClass.OKCommand;
         }
 
 
@@ -41,13 +41,7 @@ namespace Personal.Health.Care.DesktopApp.Pages.Views
             // define the dialog buttons
             this.Buttons = new Button[] { this.OkButton, this.CancelButton };
             this.DataContext = new AskDiagnoseViewModel(visit);
-            this.OkButton.Command = MediatorClass.OKCommand;
+           // this.OkButton.Command = MediatorClass.OKCommand;
         }
-
-        public string ResponseText
-        {
-            get { return ResponseTextBox.Text; }
-            set { ResponseTextBox.Text = value; MediatorClass.diagnose = value; }
-        } 
     }
 }
